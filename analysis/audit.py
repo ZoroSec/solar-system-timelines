@@ -68,6 +68,14 @@ def human_years(value: float | int) -> str:
     return f"{value:,.0f} years"
 
 
+def join_names(names: list[str]) -> str:
+    if not names:
+        return "none"
+    if len(names) == 1:
+        return names[0]
+    return ", ".join(names[:-1]) + " and " + names[-1]
+
+
 def row_summary(row: pd.Series) -> dict:
     return {
         "event_id": row["event_id"],
@@ -257,6 +265,13 @@ def render_report(payload: dict) -> str:
     first = earth["first_segment"]
     last = earth["last_segment"]
     gaps = payload["gaps"]
+    dated_worlds = [w for w in payload["worlds"] if w["first_dated_at"] is not None]
+    earliest_at = min(w["first_dated_at"] for w in dated_worlds)
+    latest_at = max(w["first_dated_at"] for w in dated_worlds)
+    earliest = [w["name"] for w in dated_worlds if w["first_dated_at"] == earliest_at]
+    latest = [w["name"] for w in dated_worlds if w["first_dated_at"] == latest_at]
+    widest = max(payload["worlds"], key=lambda w: w["largest_gap"]["share_of_span"])
+    earth_world = next(w for w in payload["worlds"] if w["key"] == "earth")
     lines = [
         "# The line is not a clock",
         "",
@@ -270,7 +285,7 @@ def render_report(payload: dict) -> str:
         "0–1) and a numeric age (`years_ago`). The first is a layout coordinate; the second is the",
         "only variable that can be compared across worlds.",
         "",
-        "## Finding 1 — Earth's final 21% is 44× denser than a linear axis",
+        "## Finding 1 — Earth's final 21% is stretched 44×",
         "",
         "| Earth interval | Time represented | Share of time | Share of line | Expansion |",
         "|---|---:|---:|---:|---:|",
@@ -289,24 +304,26 @@ def render_report(payload: dict) -> str:
         f"**{first['expansion']:.2f}×**. The ratio between the two is **{earth['last_vs_first']:.0f}×**.",
         "",
         "This is not a bug to hide. It is the design choice that makes the recent record legible.",
-        "The site should label it as editorial and let the reader see the trade-off.",
+        "The site labels it as editorial and lets the reader see the trade-off.",
         "",
         "## Finding 2 — the sample has two tempos",
         "",
         f"Of the **{counts['chapters']} chapters**, {counts['deep_time']} are deep-time events and",
         f"{counts['dated']} are dated observations; {counts['today']} are current states. The dated",
-        f"record begins at different points on different lines: first at **{payload['findings']['earliest_first_dated_at']}**,",
-        f"last at **{payload['findings']['latest_first_dated_at']}**.",
+        f"record begins at different points on different lines. The first dated chapter sits at",
+        f"{earliest_at:.0%} of the line for {join_names(earliest)}, and at {latest_at:.0%} for",
+        f"{join_names(latest)}.",
         "",
-        f"There are **{gaps['total']} consecutive gaps**. Deep-time gaps have a median of",
-        f"**{human_years(gaps['deep_median_years'])}**; dated-record gaps have a median of",
-        f"**{human_years(gaps['dated_median_years'])}**. The two regimes are not a single process,",
-        "and pooling them into one average would erase the story.",
+        f"There are **{gaps['total']} consecutive gaps**: {gaps['deep']} deep/deep, {gaps['dated']}",
+        f"dated/dated, and {gaps['mixed']} boundary intervals. Only same-class gaps enter the medians.",
+        f"Deep-time gaps have a median of **{human_years(gaps['deep_median_years'])}**; dated-record",
+        f"gaps have a median of **{human_years(gaps['dated_median_years'])}**. The two regimes are not",
+        "a single process, and pooling them into one average would erase the story.",
         "",
         "## Finding 3 — the largest silence is not the same as the longest line",
         "",
         "| World | Largest gap | Duration | Share of that world's span |",
-        "|---|---:|---:|---:|",
+        "|:---|---:|---:|---:|",
     ]
     for record in payload["worlds"]:
         gap = record["largest_gap"]
@@ -318,16 +335,18 @@ def render_report(payload: dict) -> str:
         )
     lines += [
         "",
-        "The bars on `/data.html` show the same quantity. Saturn's largest unsampled interval",
-        "covers 93% of its timeline; Earth's covers 67% and includes the entire period between",
-        "the Big Bang and the solar system. These are properties of the editorial sample, not",
-        "claims that nothing happened in the gaps.",
+        f"The bars on `/data.html` show the same quantity. {widest['name']}'s largest unsampled",
+        f"interval covers {widest['largest_gap']['share_of_span']:.0%} of its timeline; Earth's",
+        f"covers {earth_world['largest_gap']['share_of_span']:.0%} and includes the entire period",
+        "between the Big Bang and the solar system. These are properties of the editorial sample,",
+        "not claims that nothing happened in the gaps.",
         "",
         "## What the data cannot support",
         "",
         "- The nine chapters are a **curated sample**, not a random or complete sample of events.",
         "- `layout_at` is a layout coordinate. It must never be used to estimate elapsed time.",
-        "- Nine chapters per world is a format constraint. Differences in chapter counts do not exist.",
+        "- Nine chapters per world is a format constraint, not a finding. The equal counts carry",
+        "  no information about the worlds.",
         "- Age ranges are recorded only where the cited sources disagree. A blank range is not a",
         "  statement of certainty.",
         "- The globes are illustrations. Only Earth uses spacecraft imagery; the other surfaces are",

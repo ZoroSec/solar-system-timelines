@@ -683,6 +683,7 @@ function applyStats() {
   setStat("deep-median-3", fmtLongYears(gaps.deep_median_years));
   setStat("dated-median", fmtLongYears(gaps.dated_median_years));
   setStat("dated-median-2", fmtLongYears(gaps.dated_median_years));
+  setStat("mixed-gaps", gaps.mixed);
 
   setStat("earth-dated", earthWorld ? earthWorld.dated_count : 0);
   setStat("earth-dated-2", earthWorld ? earthWorld.dated_count : 0);

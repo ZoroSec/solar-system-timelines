@@ -155,6 +155,15 @@ def test_data_page_states_its_limitations():
     assert "2026-10-27" in html
 
 
+def test_data_page_explains_the_gap_classes():
+    html = (ROOT / "data.html").read_text(encoding="utf-8")
+    js = (ROOT / "data.js").read_text(encoding="utf-8")
+    assert 'data-stat="mixed-gaps"' in html
+    assert "boundary gaps" in html
+    assert "only deep-to-deep and dated-to-dated gaps enter the two figures" in html
+    assert 'setStat("mixed-gaps", gaps.mixed)' in js
+
+
 def test_data_page_is_accessible_static_markup():
     html = (ROOT / "data.html").read_text(encoding="utf-8")
     assert '<a class="skip-link" href="#main">' in html

@@ -82,8 +82,8 @@ is a format constraint, not a finding.
 
 The largest gap in each world is a property of the sample. It is not evidence
 that nothing happened during that interval. Gap statistics keep deep/deep and
-dated/dated intervals separate; boundary intervals (deep-to-dated and
-dated-to-Today) are classified as mixed and are not pooled into either median.
+dated/dated intervals separate; boundary intervals (deep-to-dated, dated-to-Today,
+and deep-to-Today) are classified as mixed and are not pooled into either median.
 Read `reports/time-axis-audit.md` for the full limitations.
 
 ## Provenance and corrections

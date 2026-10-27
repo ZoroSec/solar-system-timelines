@@ -2,6 +2,10 @@
 
 **A solar-system timeline — and an audit of its own editorial choices.**
 
+[![ci](https://github.com/ZoroSec/solar-system-timelines/actions/workflows/ci.yml/badge.svg)](https://github.com/ZoroSec/solar-system-timelines/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-171714)](LICENSE)
+[![data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-171714)](data/LICENSE)
+
 [Live site](https://zorosec.github.io/solar-system-timelines/) ·
 [Data story](https://zorosec.github.io/solar-system-timelines/data.html) ·
 [Dataset dictionary](data/README.md) ·
@@ -43,7 +47,9 @@ structure to make the editorial choice visible.
   interval is **399×** more expanded than the first.
 - **The sample has two tempos.** The median gap between consecutive deep-time
   chapters is **400 million years**; the median gap between consecutive dated
-  observations is **55 years**. A single average would describe neither record.
+  observations is **55 years**. The medians pool like with like: 36 deep/deep
+  and 25 dated/dated intervals, with the 19 boundary intervals excluded. A
+  single average would describe neither record.
 - **The largest silence depends on the denominator.** Saturn's largest gap
   covers **93%** of its own span. Earth's gap is the longest in absolute years
   — **9.2 billion years** between the Big Bang and the protoplanet — but covers
@@ -58,8 +64,8 @@ typed into the charts by hand.
 
 ## The dataset
 
-`data/events.csv` is the canonical table: **90 chapters**, one per world per
-chapter, with **36 sources**. Each row carries:
+`data/events.csv` is the canonical table: **90 rows**, one per chapter, with
+**36 sources**. Each row carries:
 
 | Field group | What it records |
 |---|---|
@@ -70,8 +76,8 @@ chapter, with **36 sources**. Each row carries:
 | Provenance | `source_id`, `as_of` |
 
 The companion tables are `data/worlds.csv` (ten world records) and
-`data/sources.csv` (citations with publisher, URL, kind, and notes). The data
-dictionary covers units, conventions, and caveats.
+`data/sources.csv` (citations with publisher, URL, kind, and notes). The
+[data dictionary](data/README.md) covers units, conventions, and caveats.
 
 A few deliberate rules:
 

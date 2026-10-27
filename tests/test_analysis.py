@@ -155,3 +155,18 @@ def test_report_tells_the_same_story(payload: dict):
     assert "9.2 billion years" in report
     assert "400.0 million years" in report
     assert "55 years" in report
+
+
+def test_report_states_its_method_without_overclaiming(payload: dict):
+    report = audit.render_report(payload)
+    flat = " ".join(report.split())
+    assert "stretched 44×" in report
+    assert "denser" not in report
+    assert "36 deep/deep, 25 dated/dated" in flat
+    assert "boundary intervals" in report
+    assert "Only same-class gaps enter the medians" in report
+    assert (
+        "The first dated chapter sits at 39% of the line for Jupiter, Saturn and Neptune, "
+        "and at 74% for Mars."
+    ) in flat
+    assert "not a finding. The equal counts carry" in report
