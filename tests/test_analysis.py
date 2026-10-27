@@ -170,3 +170,4 @@ def test_report_states_its_method_without_overclaiming(payload: dict):
         "and at 74% for Mars."
     ) in flat
     assert "not a finding. The equal counts carry" in report
+    assert "The ninety chapters are a curated sample" in report.replace("**", "")

@@ -343,7 +343,7 @@ def render_report(payload: dict) -> str:
         "",
         "## What the data cannot support",
         "",
-        "- The nine chapters are a **curated sample**, not a random or complete sample of events.",
+        "- The ninety chapters are a **curated sample**, not a random or complete sample of events.",
         "- `layout_at` is a layout coordinate. It must never be used to estimate elapsed time.",
         "- Nine chapters per world is a format constraint, not a finding. The equal counts carry",
         "  no information about the worlds.",
