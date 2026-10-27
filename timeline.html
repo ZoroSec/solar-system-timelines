@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbfbf9" />
+  <title>Earth — a timeline</title>
+  <meta name="description" content="An interactive journey through 13.8 billion years, from the Big Bang to the world outside your window." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__left">
+      <a class="home" href="./">
+        <svg class="home__icon" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+          <path d="M7.4 1.6 3.5 6l3.9 4.4" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <span class="masthead__rule" aria-hidden="true"></span>
+      <a class="wordmark" href="./">earth <span aria-hidden="true">/</span> timeline</a>
+    </div>
+    <p class="masthead__note">One line through 13.8 billion years</p>
+  </header>
+
+  <main class="stage">
+    <section class="globe" aria-hidden="true">
+      <div class="globe__halo"></div>
+      <div class="globe__orb"></div>
+      <div id="globe-canvas" class="globe__canvas"></div>
+      <div class="globe__shadow"></div>
+    </section>
+
+    <section class="caption" id="caption">
+      <h1 class="caption__epoch" id="epoch">Today</h1>
+      <p class="caption__detail">
+        <span class="caption__event" id="event">Earth</span>
+        <span class="caption__note" id="note">8 billion people</span>
+      </p>
+    </section>
+
+    <div class="scrubber" id="scrubber" role="slider" tabindex="0"
+         aria-label="Earth timeline, 13.8 billion years ago to today"
+         aria-valuemin="0" aria-valuemax="8" aria-valuenow="8"
+         aria-valuetext="Today, Earth, 8 billion people">
+      <div class="track" id="track">
+        <div class="ticks" id="ticks" aria-hidden="true"></div>
+        <div class="playhead" id="playhead" aria-hidden="true"><span></span></div>
+      </div>
+      <div class="ends" aria-hidden="true">
+        <span class="end end--start" id="end-start">13.8B years ago</span>
+        <span class="end end--finish is-current" id="end-finish">Today</span>
+      </div>
+    </div>
+
+    <p class="hint" id="hint">Move across the line to travel</p>
+
+    <nav class="planetnav" aria-label="World timelines">
+      <a class="planetnav__link" id="planet-prev" href="./timeline.html"></a>
+      <a class="planetnav__link" id="planet-next" href="./timeline.html"></a>
+    </nav>
+  </main>
+
+  <footer class="colophon">
+    <span id="credit">Imagery: NASA Blue Marble</span>
+    <span class="colophon__right">Nine moments, every world</span>
+  </footer>
+
+  <noscript>
+    <p class="noscript">This timeline is drawn with WebGL. Enable JavaScript to travel through it.</p>
+  </noscript>
+
+  <script type="importmap">
+    { "imports": { "three": "./assets/three.module.js" } }
+  </script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
