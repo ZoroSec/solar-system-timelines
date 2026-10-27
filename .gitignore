@@ -1,5 +1,7 @@
 ﻿__pycache__/
 *.pyc
+.pytest_cache/
+.coverage
 .DS_Store
 Thumbs.db
 reference/

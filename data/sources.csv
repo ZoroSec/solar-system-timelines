@@ -1,0 +1,37 @@
+source_id,title,publisher,url,kind,notes,accessed
+nasa-sun,Sun,NASA Science,https://science.nasa.gov/sun/,overview,"Overview of solar structure, activity, and evolution.",2026-10-27
+nasa-mercury,Mercury,NASA Science,https://science.nasa.gov/mercury/,overview,"Overview of Mercury's formation, surface, and exploration.",2026-10-27
+nasa-venus,Venus,NASA Science,https://science.nasa.gov/venus/,overview,"Overview of Venus's climate, surface, and exploration.",2026-10-27
+nasa-earth,Earth,NASA Science,https://science.nasa.gov/earth/,overview,"Overview of Earth's formation, geology, and climate.",2026-10-27
+nasa-moon,Moon,NASA Science,https://science.nasa.gov/moon/,overview,"Overview of lunar formation, geology, and exploration.",2026-10-27
+nasa-mars,Mars,NASA Science,https://science.nasa.gov/mars/,overview,"Overview of Martian history, water, and exploration.",2026-10-27
+nasa-jupiter,Jupiter,NASA Science,https://science.nasa.gov/jupiter/,overview,"Overview of Jupiter's formation, atmosphere, and moons.",2026-10-27
+nasa-saturn,Saturn,NASA Science,https://science.nasa.gov/saturn/,overview,"Overview of Saturn's atmosphere, rings, and moons.",2026-10-27
+nasa-uranus,Uranus,NASA Science,https://science.nasa.gov/uranus/,overview,"Overview of Uranus's tilt, interior, rings, and moons.",2026-10-27
+nasa-neptune,Neptune,NASA Science,https://science.nasa.gov/neptune/,overview,"Overview of Neptune's atmosphere, rings, and moons.",2026-10-27
+nasa-solar-cycle,Solar Cycle,NASA Science,https://science.nasa.gov/resource/solar-cycle/,reference,Solar-cycle phase and sunspot activity; supports the Carrington flare and current solar maximum.,2026-10-27
+soho,SOHO,NASA Science,https://science.nasa.gov/mission/soho/,mission,"Solar and Heliospheric Observatory, launched 1995.",2026-10-27
+solar-orbiter,Solar Orbiter,NASA Science,https://science.nasa.gov/mission/solar-orbiter/,mission,"ESA/NASA solar mission, launched 2020.",2026-10-27
+nasa-mercury-transit,Planetary Transits,NASA GSFC,https://eclipse.gsfc.nasa.gov/transit/transit.html,reference,Transits and Mercury observation history.,2026-10-27
+mariner-10,Mariner 10,NASA Science,https://science.nasa.gov/mission/mariner-10/,mission,"First spacecraft to visit Mercury, 1974–75.",2026-10-27
+bepi-colombo,BepiColombo,European Space Agency,https://www.esa.int/Science_Exploration/Space_Science/BepiColombo,mission,ESA/JAXA Mercury mission; orbit insertion is planned for November 2026.,2026-10-27
+mariner-2,Mariner 2,NASA Science,https://science.nasa.gov/mission/mariner-2/,mission,"First successful flyby of Venus, 1962.",2026-10-27
+venera-7,Venus Exploration,NASA Science,https://science.nasa.gov/venus/exploration/,mission,"Mission timeline; Venera 7 is listed as the first successful Venus landing, 1970.",2026-10-27
+venus-oceans,Was Venus the first habitable world of our solar system?,Geophysical Research Letters,https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL069790,paper,Climate-model scenario for early Venus; not a direct observation.,2026-10-27
+first-life,Evidence for early life in Earth's oldest hydrothermal vent precipitates,Nature,https://www.nature.com/articles/nature21377,paper,3.7 Ga putative microbial fabrics; the age and interpretation are debated.,2026-10-27
+chicxulub,The Chicxulub asteroid impact and mass extinction at the Cretaceous-Paleogene boundary,Science,https://www.science.org/doi/10.1126/science.1177265,paper,Impact timing and the end-Cretaceous extinction; Deccan volcanism is also implicated.,2026-10-27
+un-wpp,World Population Prospects 2024,United Nations,https://www.un.org/development/desa/pd/content/world-population-prospects-2024,dataset,Global population estimate used for the current Earth state.,2026-10-27
+apollo-11,Apollo 11,NASA,https://www.nasa.gov/mission/apollo-11/,mission,"First crewed lunar landing, 1969.",2026-10-27
+apollo-17,Apollo 17,NASA,https://www.nasa.gov/mission/apollo-17/,mission,"Last crewed lunar landing and sample return, 1972.",2026-10-27
+artemis,Artemis,NASA,https://www.nasa.gov/artemis/,program,Current program to return crews to the Moon.,2026-10-27
+viking-1,Viking 1,NASA Science,https://science.nasa.gov/mission/viking-1/,mission,"First successful Mars lander, 1976.",2026-10-27
+perseverance,Mars 2020 Perseverance,NASA Science,https://science.nasa.gov/mission/mars-2020-perseverance/,mission,Rover exploring Jezero crater and ancient habitability.,2026-10-27
+grand-tack,A low-mass asteroid belt as a natural consequence of a giant planet instability,Nature,https://www.nature.com/articles/nature10201,paper,"Model for early giant-planet migration; a scenario, not a direct observation.",2026-10-27
+voyager,Voyager,NASA Science,https://science.nasa.gov/mission/voyager/,mission,"Twin spacecraft that toured the outer planets, 1979–89.",2026-10-27
+juno,Juno,NASA Science,https://science.nasa.gov/mission/juno/,mission,Jupiter orbiter arriving in 2016.,2026-10-27
+europa-clipper,Europa Clipper,NASA Science,https://science.nasa.gov/mission/europa-clipper/,mission,Jupiter-system mission launched in 2024 and en route.,2026-10-27
+saturn-rings,Saturn: Facts,NASA Science,https://science.nasa.gov/saturn/facts/,reference,Ring structure and age context; ring age remains model-dependent.,2026-10-27
+huygens,Cassini-Huygens,European Space Agency,https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens,mission,Huygens landed on Titan in 2005; Cassini orbited Saturn 2004–17.,2026-10-27
+cassini,Cassini,NASA Science,https://science.nasa.gov/mission/cassini/,mission,"Saturn orbiter and ring observations, 2004–17.",2026-10-27
+hubble,Hubble Space Telescope,NASA Science,https://science.nasa.gov/mission/hubble/,mission,Hubble observations of Neptune's changing storms.,2026-10-27
+jwst,James Webb Space Telescope,NASA Science,https://science.nasa.gov/mission/webb/,mission,Infrared observations of Neptune's rings and atmosphere.,2026-10-27

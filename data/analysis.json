@@ -1,0 +1,1431 @@
+{
+  "schema_version": 1,
+  "generated": "2026-10-27",
+  "present_year": 2026,
+  "counts": {
+    "worlds": 10,
+    "chapters": 90,
+    "deep_time": 46,
+    "dated": 34,
+    "today": 10,
+    "sources": 36,
+    "dated_worlds": 9
+  },
+  "findings": {
+    "earth_final_interval": {
+      "line_share": 0.21,
+      "time_share": 0.004783,
+      "expansion": 43.91,
+      "years_label": "66.0 million years"
+    },
+    "earth_first_interval": {
+      "line_share": 0.075,
+      "time_share": 0.666667,
+      "expansion": 0.11,
+      "years_label": "9.2 billion years"
+    },
+    "earth_last_vs_first": 399.2,
+    "dated_share_of_chapters": 0.3778,
+    "deep_share_of_chapters": 0.5111,
+    "worlds_with_no_dated_chapter": [
+      "earth"
+    ],
+    "latest_first_dated_at": "mars",
+    "earliest_first_dated_at": "jupiter"
+  },
+  "earth": {
+    "span_years": 13800000000,
+    "span_label": "13.8 billion years",
+    "segments": [
+      {
+        "from_event": "Big Bang",
+        "to_event": "Protoplanet",
+        "years": 9200000000,
+        "years_label": "9.2 billion years",
+        "line_share": 0.075,
+        "time_share": 0.666667,
+        "expansion": 0.11
+      },
+      {
+        "from_event": "Protoplanet",
+        "to_event": "Magma ocean",
+        "years": 100000000,
+        "years_label": "100.0 million years",
+        "line_share": 0.037,
+        "time_share": 0.007246,
+        "expansion": 5.11
+      },
+      {
+        "from_event": "Magma ocean",
+        "to_event": "First oceans",
+        "years": 100000000,
+        "years_label": "100.0 million years",
+        "line_share": 0.04,
+        "time_share": 0.007246,
+        "expansion": 5.52
+      },
+      {
+        "from_event": "First oceans",
+        "to_event": "First life",
+        "years": 700000000,
+        "years_label": "700.0 million years",
+        "line_share": 0.133,
+        "time_share": 0.050725,
+        "expansion": 2.62
+      },
+      {
+        "from_event": "First life",
+        "to_event": "Snowball Earth",
+        "years": 3050000000,
+        "years_label": "3.0 billion years",
+        "line_share": 0.275,
+        "time_share": 0.221014,
+        "expansion": 1.24
+      },
+      {
+        "from_event": "Snowball Earth",
+        "to_event": "Pangaea",
+        "years": 400000000,
+        "years_label": "400.0 million years",
+        "line_share": 0.102,
+        "time_share": 0.028986,
+        "expansion": 3.52
+      },
+      {
+        "from_event": "Pangaea",
+        "to_event": "Chicxulub",
+        "years": 184000000,
+        "years_label": "184.0 million years",
+        "line_share": 0.128,
+        "time_share": 0.013333,
+        "expansion": 9.6
+      },
+      {
+        "from_event": "Chicxulub",
+        "to_event": "Earth",
+        "years": 66000000,
+        "years_label": "66.0 million years",
+        "line_share": 0.21,
+        "time_share": 0.004783,
+        "expansion": 43.91
+      }
+    ],
+    "first_segment": {
+      "from_event": "Big Bang",
+      "to_event": "Protoplanet",
+      "years": 9200000000,
+      "years_label": "9.2 billion years",
+      "line_share": 0.075,
+      "time_share": 0.666667,
+      "expansion": 0.11
+    },
+    "last_segment": {
+      "from_event": "Chicxulub",
+      "to_event": "Earth",
+      "years": 66000000,
+      "years_label": "66.0 million years",
+      "line_share": 0.21,
+      "time_share": 0.004783,
+      "expansion": 43.91
+    },
+    "last_vs_first": 399.2,
+    "first_line_share": 0.075,
+    "first_time_share": 0.666667,
+    "last_line_share": 0.21,
+    "last_time_share": 0.004783
+  },
+  "gaps": {
+    "total": 80,
+    "deep": 36,
+    "dated": 25,
+    "mixed": 19,
+    "deep_median_years": 400000000,
+    "dated_median_years": 55,
+    "largest": 9200000000,
+    "largest_world": "earth"
+  },
+  "dated_by_century": [
+    {
+      "century": 1600,
+      "count": 10
+    },
+    {
+      "century": 1700,
+      "count": 2
+    },
+    {
+      "century": 1800,
+      "count": 4
+    },
+    {
+      "century": 1900,
+      "count": 14
+    },
+    {
+      "century": 2000,
+      "count": 4
+    }
+  ],
+  "worlds": [
+    {
+      "key": "sun",
+      "name": "Sun",
+      "order": 0,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 4,
+      "dated_count": 4,
+      "today_count": 1,
+      "first_dated_at": 0.52,
+      "largest_gap": {
+        "from_chapter": 3,
+        "to_chapter": 4,
+        "from_event": "Main sequence",
+        "to_event": "Spots traced",
+        "from_at": 0.39,
+        "to_at": 0.52,
+        "years": 4099999584,
+        "line_share": 0.13,
+        "time_share": 0.891304,
+        "kind": "mixed",
+        "share_of_span": 0.8913,
+        "years_label": "4.1 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "sun_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "The cloud collapses",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "sun_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.57 billion years ago",
+          "years_ago": 4570000000,
+          "time_kind": "deep_time",
+          "event": "Ignition",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "sun_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "Young and violent",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "sun_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "4.1 billion years ago",
+          "years_ago": 4100000000,
+          "time_kind": "deep_time",
+          "event": "Main sequence",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "sun_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "1610",
+          "years_ago": 416,
+          "time_kind": "dated",
+          "event": "Spots traced",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "sun_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1859",
+          "years_ago": 167,
+          "time_kind": "dated",
+          "event": "Carrington flare",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "sun_07",
+          "chapter": 6,
+          "layout_at": 0.74,
+          "time_label": "1995",
+          "years_ago": 31,
+          "time_kind": "dated",
+          "event": "SOHO",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "sun_08",
+          "chapter": 7,
+          "layout_at": 0.87,
+          "time_label": "2020",
+          "years_ago": 6,
+          "time_kind": "dated",
+          "event": "Solar Orbiter",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "sun_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Solar maximum",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "mercury",
+      "name": "Mercury",
+      "order": 1,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 5,
+      "dated_count": 3,
+      "today_count": 1,
+      "first_dated_at": 0.64,
+      "largest_gap": {
+        "from_chapter": 4,
+        "to_chapter": 5,
+        "from_event": "The shrinking",
+        "to_event": "The first transit",
+        "from_at": 0.52,
+        "to_at": 0.64,
+        "years": 3499999605,
+        "line_share": 0.12,
+        "time_share": 0.760869,
+        "kind": "mixed",
+        "share_of_span": 0.7609,
+        "years_label": "3.5 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "mercury_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mercury_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "Iron world",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "mercury_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4.1 billion years ago",
+          "years_ago": 4100000000,
+          "time_kind": "deep_time",
+          "event": "Erupting plains",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mercury_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "3.9 billion years ago",
+          "years_ago": 3900000000,
+          "time_kind": "deep_time",
+          "event": "Caloris basin",
+          "event_class": "impact",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mercury_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "3.5 billion years ago",
+          "years_ago": 3500000000,
+          "time_kind": "deep_time",
+          "event": "The shrinking",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mercury_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1631",
+          "years_ago": 395,
+          "time_kind": "dated",
+          "event": "The first transit",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mercury_07",
+          "chapter": 6,
+          "layout_at": 0.74,
+          "time_label": "1889",
+          "years_ago": 137,
+          "time_kind": "dated",
+          "event": "Ink and maps",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mercury_08",
+          "chapter": 7,
+          "layout_at": 0.87,
+          "time_label": "1974",
+          "years_ago": 52,
+          "time_kind": "dated",
+          "event": "Mariner 10",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mercury_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "BepiColombo",
+          "event_class": "mission",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "venus",
+      "name": "Venus",
+      "order": 2,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 5,
+      "dated_count": 3,
+      "today_count": 1,
+      "first_dated_at": 0.64,
+      "largest_gap": {
+        "from_chapter": 3,
+        "to_chapter": 4,
+        "from_event": "The runaway",
+        "to_event": "Resurfacing",
+        "from_at": 0.39,
+        "to_at": 0.52,
+        "years": 2300000000,
+        "line_share": 0.13,
+        "time_share": 0.5,
+        "kind": "deep",
+        "share_of_span": 0.5,
+        "years_label": "2.3 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "venus_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "venus_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "Magma ocean",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "venus_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4 billion years ago",
+          "years_ago": 4000000000,
+          "time_kind": "deep_time",
+          "event": "Temperate years",
+          "event_class": "climate",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "venus_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "3 billion years ago",
+          "years_ago": 3000000000,
+          "time_kind": "deep_time",
+          "event": "The runaway",
+          "event_class": "climate",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "venus_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "700 million years ago",
+          "years_ago": 700000000,
+          "time_kind": "deep_time",
+          "event": "Resurfacing",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "venus_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1610",
+          "years_ago": 416,
+          "time_kind": "dated",
+          "event": "Galileo's phases",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "venus_07",
+          "chapter": 6,
+          "layout_at": 0.74,
+          "time_label": "1962",
+          "years_ago": 64,
+          "time_kind": "dated",
+          "event": "Mariner 2",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "venus_08",
+          "chapter": 7,
+          "layout_at": 0.87,
+          "time_label": "1970",
+          "years_ago": 56,
+          "time_kind": "dated",
+          "event": "Venera 7",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "venus_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Cloud world",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "earth",
+      "name": "Earth",
+      "order": 3,
+      "start_label": "13.8 billion years ago",
+      "span_years": 13800000000,
+      "deep_count": 8,
+      "dated_count": 0,
+      "today_count": 1,
+      "first_dated_at": null,
+      "largest_gap": {
+        "from_chapter": 0,
+        "to_chapter": 1,
+        "from_event": "Big Bang",
+        "to_event": "Protoplanet",
+        "from_at": 0.0,
+        "to_at": 0.075,
+        "years": 9200000000,
+        "line_share": 0.075,
+        "time_share": 0.666667,
+        "kind": "deep",
+        "share_of_span": 0.6667,
+        "years_label": "9.2 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "earth_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "13.8 billion years ago",
+          "years_ago": 13800000000,
+          "time_kind": "deep_time",
+          "event": "Big Bang",
+          "event_class": "cosmic",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "earth_02",
+          "chapter": 1,
+          "layout_at": 0.075,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Protoplanet",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "earth_03",
+          "chapter": 2,
+          "layout_at": 0.112,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "Magma ocean",
+          "event_class": "geological",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "earth_04",
+          "chapter": 3,
+          "layout_at": 0.152,
+          "time_label": "4.4 billion years ago",
+          "years_ago": 4400000000,
+          "time_kind": "deep_time",
+          "event": "First oceans",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "earth_05",
+          "chapter": 4,
+          "layout_at": 0.285,
+          "time_label": "3.7 billion years ago",
+          "years_ago": 3700000000,
+          "time_kind": "deep_time",
+          "event": "First life",
+          "event_class": "life",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "earth_06",
+          "chapter": 5,
+          "layout_at": 0.56,
+          "time_label": "650 million years ago",
+          "years_ago": 650000000,
+          "time_kind": "deep_time",
+          "event": "Snowball Earth",
+          "event_class": "climate",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "earth_07",
+          "chapter": 6,
+          "layout_at": 0.662,
+          "time_label": "250 million years ago",
+          "years_ago": 250000000,
+          "time_kind": "deep_time",
+          "event": "Pangaea",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "earth_08",
+          "chapter": 7,
+          "layout_at": 0.79,
+          "time_label": "66 million years ago",
+          "years_ago": 66000000,
+          "time_kind": "deep_time",
+          "event": "Chicxulub",
+          "event_class": "impact",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "earth_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Earth",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "moon",
+      "name": "Moon",
+      "order": 4,
+      "start_label": "4.5 billion years ago",
+      "span_years": 4500000000,
+      "deep_count": 5,
+      "dated_count": 3,
+      "today_count": 1,
+      "first_dated_at": 0.64,
+      "largest_gap": {
+        "from_chapter": 4,
+        "to_chapter": 5,
+        "from_event": "Maria",
+        "to_event": "Galileo's map",
+        "from_at": 0.52,
+        "to_at": 0.64,
+        "years": 3199999584,
+        "line_share": 0.12,
+        "time_share": 0.711111,
+        "kind": "mixed",
+        "share_of_span": 0.7111,
+        "years_label": "3.2 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "moon_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "A giant impact",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "moon_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.4 billion years ago",
+          "years_ago": 4400000000,
+          "time_kind": "deep_time",
+          "event": "Magma ocean",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "moon_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4.3 billion years ago",
+          "years_ago": 4300000000,
+          "time_kind": "deep_time",
+          "event": "First crust",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "moon_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "3.9 billion years ago",
+          "years_ago": 3900000000,
+          "time_kind": "deep_time",
+          "event": "Bombardment",
+          "event_class": "impact",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "moon_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "3.2 billion years ago",
+          "years_ago": 3200000000,
+          "time_kind": "deep_time",
+          "event": "Maria",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "moon_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1610",
+          "years_ago": 416,
+          "time_kind": "dated",
+          "event": "Galileo's map",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "moon_07",
+          "chapter": 6,
+          "layout_at": 0.74,
+          "time_label": "1969",
+          "years_ago": 57,
+          "time_kind": "dated",
+          "event": "Apollo 11",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "moon_08",
+          "chapter": 7,
+          "layout_at": 0.87,
+          "time_label": "1972",
+          "years_ago": 54,
+          "time_kind": "dated",
+          "event": "Last samples",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "moon_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Artemis",
+          "event_class": "mission",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "mars",
+      "name": "Mars",
+      "order": 5,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 6,
+      "dated_count": 2,
+      "today_count": 1,
+      "first_dated_at": 0.74,
+      "largest_gap": {
+        "from_chapter": 5,
+        "to_chapter": 6,
+        "from_event": "Drying",
+        "to_event": "Imaginary canals",
+        "from_at": 0.64,
+        "to_at": 0.74,
+        "years": 1999999851,
+        "line_share": 0.1,
+        "time_share": 0.434783,
+        "kind": "mixed",
+        "share_of_span": 0.4348,
+        "years_label": "2.0 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "mars_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mars_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.1 billion years ago",
+          "years_ago": 4100000000,
+          "time_kind": "deep_time",
+          "event": "Borealis impact",
+          "event_class": "impact",
+          "evidence": "hypothesis"
+        },
+        {
+          "event_id": "mars_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "3.9 billion years ago",
+          "years_ago": 3900000000,
+          "time_kind": "deep_time",
+          "event": "Hellas",
+          "event_class": "impact",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mars_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "3.7 billion years ago",
+          "years_ago": 3700000000,
+          "time_kind": "deep_time",
+          "event": "Rivers and lakes",
+          "event_class": "climate",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mars_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "3 billion years ago",
+          "years_ago": 3000000000,
+          "time_kind": "deep_time",
+          "event": "Tharsis rises",
+          "event_class": "geological",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mars_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "2 billion years ago",
+          "years_ago": 2000000000,
+          "time_kind": "deep_time",
+          "event": "Drying",
+          "event_class": "climate",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "mars_07",
+          "chapter": 6,
+          "layout_at": 0.74,
+          "time_label": "1877",
+          "years_ago": 149,
+          "time_kind": "dated",
+          "event": "Imaginary canals",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mars_08",
+          "chapter": 7,
+          "layout_at": 0.87,
+          "time_label": "1976",
+          "years_ago": 50,
+          "time_kind": "dated",
+          "event": "Viking 1",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "mars_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Perseverance",
+          "event_class": "mission",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "jupiter",
+      "name": "Jupiter",
+      "order": 6,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 3,
+      "dated_count": 5,
+      "today_count": 1,
+      "first_dated_at": 0.39,
+      "largest_gap": {
+        "from_chapter": 2,
+        "to_chapter": 3,
+        "from_event": "Four moons",
+        "to_event": "Galileo looks",
+        "from_at": 0.26,
+        "to_at": 0.39,
+        "years": 3999999584,
+        "line_share": 0.13,
+        "time_share": 0.869565,
+        "kind": "mixed",
+        "share_of_span": 0.8696,
+        "years_label": "4.0 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "jupiter_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "The firstborn",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "jupiter_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "The Grand Tack",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "jupiter_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4 billion years ago",
+          "years_ago": 4000000000,
+          "time_kind": "deep_time",
+          "event": "Four moons",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "jupiter_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "1610",
+          "years_ago": 416,
+          "time_kind": "dated",
+          "event": "Galileo looks",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "jupiter_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "1665",
+          "years_ago": 361,
+          "time_kind": "dated",
+          "event": "The Storm",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "jupiter_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1979",
+          "years_ago": 47,
+          "time_kind": "dated",
+          "event": "Voyager",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "jupiter_07",
+          "chapter": 6,
+          "layout_at": 0.78,
+          "time_label": "1994",
+          "years_ago": 32,
+          "time_kind": "dated",
+          "event": "Comet crash",
+          "event_class": "impact",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "jupiter_08",
+          "chapter": 7,
+          "layout_at": 0.89,
+          "time_label": "2016",
+          "years_ago": 10,
+          "time_kind": "dated",
+          "event": "Juno",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "jupiter_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Ocean missions",
+          "event_class": "mission",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "saturn",
+      "name": "Saturn",
+      "order": 7,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 3,
+      "dated_count": 5,
+      "today_count": 1,
+      "first_dated_at": 0.39,
+      "largest_gap": {
+        "from_chapter": 1,
+        "to_chapter": 2,
+        "from_event": "Titan is born",
+        "to_event": "The rings",
+        "from_at": 0.13,
+        "to_at": 0.26,
+        "years": 4300000000,
+        "line_share": 0.13,
+        "time_share": 0.934783,
+        "kind": "deep",
+        "share_of_span": 0.9348,
+        "years_label": "4.3 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "saturn_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "saturn_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.4 billion years ago",
+          "years_ago": 4400000000,
+          "time_kind": "deep_time",
+          "event": "Titan is born",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "saturn_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "100 million years ago",
+          "years_ago": 100000000,
+          "time_kind": "deep_time",
+          "event": "The rings",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "saturn_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "1610",
+          "years_ago": 416,
+          "time_kind": "dated",
+          "event": "Handles",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "saturn_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "1655",
+          "years_ago": 371,
+          "time_kind": "dated",
+          "event": "Titan and the ring",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "saturn_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1675",
+          "years_ago": 351,
+          "time_kind": "dated",
+          "event": "The great gap",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "saturn_07",
+          "chapter": 6,
+          "layout_at": 0.78,
+          "time_label": "1980",
+          "years_ago": 46,
+          "time_kind": "dated",
+          "event": "Voyager 1",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "saturn_08",
+          "chapter": 7,
+          "layout_at": 0.89,
+          "time_label": "2005",
+          "years_ago": 21,
+          "time_kind": "dated",
+          "event": "Huygens lands",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "saturn_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Ring rain",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "uranus",
+      "name": "Uranus",
+      "order": 8,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 4,
+      "dated_count": 4,
+      "today_count": 1,
+      "first_dated_at": 0.52,
+      "largest_gap": {
+        "from_chapter": 2,
+        "to_chapter": 3,
+        "from_event": "A mantle of ice",
+        "to_event": "Moons in line",
+        "from_at": 0.26,
+        "to_at": 0.39,
+        "years": 2000000000,
+        "line_share": 0.13,
+        "time_share": 0.434783,
+        "kind": "deep",
+        "share_of_span": 0.4348,
+        "years_label": "2.0 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "uranus_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "uranus_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "The knock",
+          "event_class": "impact",
+          "evidence": "hypothesis"
+        },
+        {
+          "event_id": "uranus_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4 billion years ago",
+          "years_ago": 4000000000,
+          "time_kind": "deep_time",
+          "event": "A mantle of ice",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "uranus_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "2 billion years ago",
+          "years_ago": 2000000000,
+          "time_kind": "deep_time",
+          "event": "Moons in line",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "uranus_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "1781",
+          "years_ago": 245,
+          "time_kind": "dated",
+          "event": "A comet, not a comet",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "uranus_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1787",
+          "years_ago": 239,
+          "time_kind": "dated",
+          "event": "Titania and Oberon",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "uranus_07",
+          "chapter": 6,
+          "layout_at": 0.78,
+          "time_label": "1977",
+          "years_ago": 49,
+          "time_kind": "dated",
+          "event": "Rings by accident",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "uranus_08",
+          "chapter": 7,
+          "layout_at": 0.89,
+          "time_label": "1986",
+          "years_ago": 40,
+          "time_kind": "dated",
+          "event": "Voyager 2",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "uranus_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Waiting",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    },
+    {
+      "key": "neptune",
+      "name": "Neptune",
+      "order": 9,
+      "start_label": "4.6 billion years ago",
+      "span_years": 4600000000,
+      "deep_count": 3,
+      "dated_count": 5,
+      "today_count": 1,
+      "first_dated_at": 0.39,
+      "largest_gap": {
+        "from_chapter": 2,
+        "to_chapter": 3,
+        "from_event": "Triton, backwards",
+        "to_event": "A misplaced star",
+        "from_at": 0.26,
+        "to_at": 0.39,
+        "years": 3999999586,
+        "line_share": 0.13,
+        "time_share": 0.869565,
+        "kind": "mixed",
+        "share_of_span": 0.8696,
+        "years_label": "4.0 billion years"
+      },
+      "chapters": [
+        {
+          "event_id": "neptune_01",
+          "chapter": 0,
+          "layout_at": 0.0,
+          "time_label": "4.6 billion years ago",
+          "years_ago": 4600000000,
+          "time_kind": "deep_time",
+          "event": "Formation",
+          "event_class": "formation",
+          "evidence": "inferred"
+        },
+        {
+          "event_id": "neptune_02",
+          "chapter": 1,
+          "layout_at": 0.13,
+          "time_label": "4.5 billion years ago",
+          "years_ago": 4500000000,
+          "time_kind": "deep_time",
+          "event": "Out to the edge",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "neptune_03",
+          "chapter": 2,
+          "layout_at": 0.26,
+          "time_label": "4 billion years ago",
+          "years_ago": 4000000000,
+          "time_kind": "deep_time",
+          "event": "Triton, backwards",
+          "event_class": "formation",
+          "evidence": "modeled"
+        },
+        {
+          "event_id": "neptune_04",
+          "chapter": 3,
+          "layout_at": 0.39,
+          "time_label": "1612",
+          "years_ago": 414,
+          "time_kind": "dated",
+          "event": "A misplaced star",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "neptune_05",
+          "chapter": 4,
+          "layout_at": 0.52,
+          "time_label": "1846",
+          "years_ago": 180,
+          "time_kind": "dated",
+          "event": "Found with mathematics",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "neptune_06",
+          "chapter": 5,
+          "layout_at": 0.64,
+          "time_label": "1989",
+          "years_ago": 37,
+          "time_kind": "dated",
+          "event": "Voyager 2",
+          "event_class": "mission",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "neptune_07",
+          "chapter": 6,
+          "layout_at": 0.78,
+          "time_label": "1994",
+          "years_ago": 32,
+          "time_kind": "dated",
+          "event": "The Spot is gone",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "neptune_08",
+          "chapter": 7,
+          "layout_at": 0.89,
+          "time_label": "2011",
+          "years_ago": 15,
+          "time_kind": "dated",
+          "event": "One lap of the Sun",
+          "event_class": "observation",
+          "evidence": "observed"
+        },
+        {
+          "event_id": "neptune_09",
+          "chapter": 8,
+          "layout_at": 1.0,
+          "time_label": "Today",
+          "years_ago": 0,
+          "time_kind": "today",
+          "event": "Rings and storms",
+          "event_class": "status",
+          "evidence": "state"
+        }
+      ]
+    }
+  ]
+}

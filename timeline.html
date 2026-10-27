@@ -22,7 +22,10 @@
       <span class="masthead__rule" aria-hidden="true"></span>
       <a class="wordmark" href="./">earth <span aria-hidden="true">/</span> timeline</a>
     </div>
-    <p class="masthead__note">One line through 13.8 billion years</p>
+    <div class="masthead__right">
+      <p class="masthead__note">Editorial spacing, not to scale</p>
+      <a class="masthead__link" href="./data.html">Data &amp; methods</a>
+    </div>
   </header>
 
   <main class="stage">
@@ -37,14 +40,15 @@
       <h1 class="caption__epoch" id="epoch">Today</h1>
       <p class="caption__detail">
         <span class="caption__event" id="event">Earth</span>
-        <span class="caption__note" id="note">8 billion people</span>
+        <span class="caption__note" id="note">8.2 billion people</span>
       </p>
     </section>
 
     <div class="scrubber" id="scrubber" role="slider" tabindex="0"
          aria-label="Earth timeline, 13.8 billion years ago to today"
          aria-valuemin="0" aria-valuemax="8" aria-valuenow="8"
-         aria-valuetext="Today, Earth, 8 billion people">
+         aria-valuetext="Today, Earth, 8.2 billion people"
+         aria-describedby="scale-disclosure">
       <div class="track" id="track">
         <div class="ticks" id="ticks" aria-hidden="true"></div>
         <div class="playhead" id="playhead" aria-hidden="true"><span></span></div>
@@ -55,7 +59,8 @@
       </div>
     </div>
 
-    <p class="hint" id="hint">Move across the line to travel</p>
+    <p class="hint" id="hint">Move across the line to travel · spacing is editorial</p>
+    <p class="sr-only" id="scale-disclosure">The timeline's spacing is editorial and not to scale. Numeric ages are in the data table.</p>
 
     <nav class="planetnav" aria-label="World timelines">
       <a class="planetnav__link" id="planet-prev" href="./timeline.html"></a>

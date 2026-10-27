@@ -1,0 +1,11 @@
+{
+  "name": "solar-system-timelines",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export:events": "node tools/export_events.mjs data/js-events.json",
+    "check:events": "node tools/export_events.mjs --check",
+    "check:analysis": "python analysis/audit.py --check",
+    "test": "python -m pytest -q"
+  }
+}

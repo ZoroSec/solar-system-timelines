@@ -1,91 +1,264 @@
-# A solar system of timelines
+# The line is not a clock
 
-A small, offline homepage that lines up the Sun, eight planets and the Moon, plus an interactive WebGL timeline — one for **every world**, nine moments each. The homepage takes its cue from a classic planet-lineup illustration; the timeline pages are an independent recreation of the minimalist concept by [@quantapar](https://x.com/quantapar/status/2113562786265756046).
+**A solar-system timeline — and an audit of its own editorial choices.**
 
-![The solar system](shots/home.png)
+[Live site](https://zorosec.github.io/solar-system-timelines/) ·
+[Data story](https://zorosec.github.io/solar-system-timelines/data.html) ·
+[Dataset dictionary](data/README.md) ·
+[Audit report](reports/time-axis-audit.md)
 
-![Saturn](shots/planet_saturn.png)
+![The solar-system homepage](shots/home.png)
 
-![Every world's timeline, today](shots/planet_timelines.png)
+The site gives ten worlds nine chapters each and draws them as lines. The
+spacing is editorial: it keeps the recent record legible instead of pretending
+that a 13.8-billion-year history can share a linear axis with a decade of
+spacecraft observations.
 
-## Run it
+That is a defensible design choice, but it is still a transformation of data.
+This repository publishes both layers — the interactive site and the table
+behind it — and measures what the layout does to time.
 
-No build step. The site is plain HTML, CSS, JavaScript and local assets; it only needs to be served over HTTP (ES modules and textures do not load from `file://`).
+![The data story](shots/data.png)
+
+## The question
+
+A timeline is a chart. If its marks are placed for legibility rather than
+duration, the chart has a distortion, and the distortion can be quantified.
+
+The project asks four questions of its own sample:
+
+1. How much line does each interval receive, compared with the time it represents?
+2. Where is the sample silent, and how large are those silences relative to each world's span?
+3. Do deep time and the dated record behave like one process or two?
+4. Which claims are observations, which are inferences or models, and where do the cited sources disagree?
+
+The answer is not a single score. It is a small, sourced dataset with enough
+structure to make the editorial choice visible.
+
+## What the audit found
+
+- **Earth's recent end is stretched 43.9×.** The final 21% of Earth's line —
+  *Chicxulub* to today — represents 0.48% of its 13.8-billion-year span. The
+  first interval gets 7.5% of the line for 66.67% of the time. The final
+  interval is **399×** more expanded than the first.
+- **The sample has two tempos.** The median gap between consecutive deep-time
+  chapters is **400 million years**; the median gap between consecutive dated
+  observations is **55 years**. A single average would describe neither record.
+- **The largest silence depends on the denominator.** Saturn's largest gap
+  covers **93%** of its own span. Earth's gap is the longest in absolute years
+  — **9.2 billion years** between the Big Bang and the protoplanet — but covers
+  67% of its span. The data story charts the normalized share.
+- **The dated record is an observation history, not a uniform sample.** **71%**
+  of dated chapters fall in the 1600s and 1900s. Nine of ten worlds have a
+  dated chapter; **Earth has none** — its line runs from deep time straight to
+  Today.
+
+These numbers are generated from the CSV by `analysis/audit.py`. They are not
+typed into the charts by hand.
+
+## The dataset
+
+`data/events.csv` is the canonical table: **90 chapters**, one per world per
+chapter, with **36 sources**. Each row carries:
+
+| Field group | What it records |
+|---|---|
+| Identity | `event_id`, `world`, `chapter` |
+| Position | `layout_at` (editorial, 0–1), `time_label`, `years_ago` |
+| Uncertainty | `years_ago_low` / `years_ago_high`, `source_note` |
+| Classification | `time_kind`, `event_class`, `evidence`, `status` |
+| Provenance | `source_id`, `as_of` |
+
+The companion tables are `data/worlds.csv` (ten world records) and
+`data/sources.csv` (citations with publisher, URL, kind, and notes). The data
+dictionary covers units, conventions, and caveats.
+
+A few deliberate rules:
+
+- **Ages are years before 2026.** `4.6 billion years ago` is
+  `4,600,000,000`; `years_ago = 0` means Today.
+- **`layout_at` is not time.** It is an editorial coordinate, monotonic within
+  a world, and must never be used to estimate elapsed time.
+- **Ranges are exceptions, not decoration.** A range is recorded only where
+  cited sources genuinely disagree. A blank range means “no range assigned,”
+  not certainty.
+- **Evidence is graded.** `observed`, `inferred`, `modeled`, `hypothesis`, and
+  `state` are different kinds of claim. “Today” is a snapshot at **2026-10-27**,
+  not a live feed.
+
+## Method
+
+```text
+data/events.csv ──┐
+data/worlds.csv ──┼─> analysis/audit.py ─> data/analysis.json
+data/sources.csv ─┘                    └─> reports/time-axis-audit.md
+                                                │
+                                                ▼
+                                      data.html / data.js
+                                      (SVG charts + table)
+```
+
+`analysis/audit.py` validates the three tables, derives the intervals, gap
+statistics, century counts, and world records, then writes the committed
+artifacts. The `generated` field is pinned to the dataset snapshot
+(`max(as_of)`), not the machine's clock, so `--check` is deterministic.
+
+The presentation layer is separate. `data/js-events.json` is exported from the
+authored chapter copy and committed as a parity artifact; CI fails if it drifts
+from `planet-eras.js` / `earth-eras.js`. The browser then reads the published
+JSON and CSV directly — no build step, no chart library, no WebGL, no animation
+loop.
+
+Validation is part of the deliverable:
 
 ```bash
-cd earth-timeline
+node tools/export_events.mjs --check   # presentation/dataset parity
+python analysis/audit.py --check       # generated analysis is current
+python -m pytest -q                    # schema, parity, analysis, page tests
+python tools/check_sources.py          # optional network check of all 36 URLs
+```
+
+GitHub Actions runs the first three on every push and pull request. The source
+check is separate because external publishers rate-limit and block bots; it
+reports 401/403/429 responses as *blocked*, not broken. The browser regression
+suite (`tools/test_ui.py`) separately checks the homepage, every world timeline,
+and the data page at desktop and mobile widths.
+
+## Why this is a data project
+
+There is no model here, and that is intentional. With nine curated chapters per
+world, a predictive claim would be theater. The work that makes the sample
+useful is the unglamorous part:
+
+- a typed, validated table with stable keys;
+- numeric ages separated from layout coordinates;
+- explicit evidence grades and source provenance;
+- uncertainty recorded only where the sources disagree;
+- a reproducible pipeline whose committed outputs are checked in CI;
+- a public account of what the sample cannot support.
+
+The result is a portfolio-scale project about **measurement and disclosure**,
+not a dashboard with a decorative regression line.
+
+## Corrections made while building the dataset
+
+The audit surfaced five presentation claims that did not match the cited
+record. The CSV, the site copy, and the generated analysis now agree:
+
+- **Sun, 4.1 Ga:** “main sequence” replaces the ambiguous “steady state.”
+- **Saturn, 1655:** Titan was discovered in 1655; the ring interpretation
+  followed in 1659.
+- **Moon, 1972:** Apollo 17 returned the last lunar samples, not Apollo 11.
+- **Mercury, Today:** BepiColombo orbit insertion is due in November 2026.
+- **Earth, Today:** population is recorded as 8.2 billion (UN WPP 2024).
+
+The source URLs were checked on 2026-10-27. Two NASA pages had moved and were
+replaced, and a slow NSSDC record was swapped for NASA's Venus mission
+timeline. Publisher 403 responses from some journal sites are bot blocks, not
+broken citations.
+
+## Limitations
+
+- The ninety chapters are a **curated sample**, chosen to tell a coherent story.
+  They are not a random or complete inventory of events.
+- A gap is a property of the sample. It is not evidence that nothing happened
+  during that interval.
+- Nine chapters per world is a format constraint, not a finding. The equal
+  counts carry no information about the worlds.
+- “Today” is a snapshot at **2026-10-27**. Planned missions are marked as
+  planned, not as completed.
+- The globes are illustrations. Only Earth uses spacecraft imagery; the other
+  surfaces are procedural and not spatially registered to the real worlds.
+- The dated record is a history of observation. Its clusters reflect
+  telescopes, spacecraft, and access to instruments — not the underlying rate
+  of events.
+
+## The site
+
+The public site is plain HTML, CSS, JavaScript, and local assets. It runs
+offline after the page loads; Three.js is vendored, with no CDN or package
+manager.
+
+- `/` — the solar-system homepage. Hover a world for a fact, click it to open
+  its timeline.
+- `/timeline.html` — Earth's timeline. `?planet=` selects any of the ten
+  worlds; `&era=N` deep-links a chapter.
+- `/data.html` — the data story, four SVG charts, the filterable 90-row table,
+  downloads, methods, and limitations.
+- Legacy `/?era=N` links redirect to `timeline.html?era=N`.
+
+The timeline supports pointer scrubbing, keyboard stepping, a draggable globe,
+a world switcher, and reduced-motion preferences. Every timeline states that
+its spacing is editorial and not to scale.
+
+## Run it locally
+
+```bash
 python -m http.server 4173
 ```
 
-Open <http://127.0.0.1:4173>. Any static server works, for example `npx serve .`.
+Open <http://127.0.0.1:4173>. Any static server works; ES modules and textures
+do not load from `file://`.
 
-- `/` is the solar-system homepage.
-- `/timeline.html` is the Earth timeline (as before).
-- `/timeline.html?planet=mars` — the same timeline treatment for any world: `sun`, `mercury`, `venus`, `earth`, `moon`, `mars`, `jupiter`, `saturn`, `uranus`, `neptune`.
-- `&era=N` deep-links a chapter on any world (e.g. `/timeline.html?planet=jupiter&era=4`).
-- Legacy `/?era=N` links redirect to `timeline.html?era=N`.
+For the data checks:
 
-## The homepage
-
-- **Hover a world** — the readout under the line names the world and offers one fact; the CTA retargets to that world's timeline.
-- **Click a world** (or focus it and press Enter) — it opens `/timeline.html?planet=…`. The Sun and Moon are links too.
-- **Living lineup** — every world turns slowly on its own axis, with its real axial tilt: Uranus rolls on its side, Venus turns backwards, the Moon sits raised beside Earth. Rotation pauses under `prefers-reduced-motion`.
-- **Narrow screens** — the lineup becomes a horizontal strip; swipe (or tap) from the Sun out to Neptune.
-- **Old links** — `/?era=N` still redirects to the timeline.
-
-## World timelines
-
-Every world gets the Earth treatment on `timeline.html?planet=X`: a centred globe, a bold epoch caption, one chapter line, and a tall black playhead on a nine-moment line ending at *Today*.
-
-- **Scrub** — hover across the line previews a time; click and drag scrubs.
-- **Keyboard** — `←`/`→` (or `↑`/`↓`, PageUp/PageDown) step between chapters; `Home` jumps to formation, `End` to today.
-- **Globe** — drag horizontally to spin the world. Only Earth uses the Blue Marble textures; the rest are procedural GLSL (the same shaders as the homepage), dressed per era — the Sun from protostar to solar maximum, the Moon from the Theia impact to Artemis, Mercury cooling from lava-cracked rock to the Caloris basin, Venus's magma ocean giving way to a possible ocean world, Mars gaining Hellas and rivers before drying into the canyon-cut desert we see today, Jupiter's storm appearing in 1665 and carrying Shoemaker–Levy 9's scars in 1994, Saturn's rings puzzling Galileo in 1610, Uranus's calm methane disk and dark rings found by accident in 1977, and Neptune's Great Dark Spot arriving in 1989 and vanishing in 1994, with JWST drawing its rings today.
-- **Surface accuracy** — the shared shaders model maria, crisp craters and ejecta rays on rocky worlds, giant impact basins, Mercury's lobate scarps and bright hollows, the Valles Marineris gash and Tharsis volcanoes on Mars, transient lava fields and ancient Martian water; zonal flow and methane cirrus on the ice giants, including bright convective ovals and polar hoods; Venus's surface showing through a thinner early cloud deck; turbulent belts with a sheared red spot and comet scars on Jupiter; granulation and sunspots on the Sun; and three ring styles — Saturn's C/B/A structure with the Cassini division and Encke gap, Uranus's narrow charcoal rings, and Neptune's sparse arcs.
-- **World switcher** — every timeline, Earth included, carries `‹ prev | next ›` links under the hint; they hop between worlds in orbital order (wrapping Neptune → Sun → Mercury).
-- **Masthead** — a top-left `‹ Home` pill sits before the wordmark. Both it and the world wordmark (`mars / timeline`) return to the solar system, and the wordmark names the world you're in.
-- **Reduced motion** — respected everywhere, as on Earth.
-
-## How it is made
-
-- **Three.js** is vendored locally (`assets/three.module.js`), no CDN or package manager.
-- **Homepage** — one orthographic WebGL canvas behind a line of DOM hit targets; CSS owns layout and the spheres are drawn to match. Each world gets its own tilt group and spin rate. Shared world shaders live in `planets.js`.
-- **Timeline** — Earth keeps its texture pipeline (day/specular/Pangaea/clouds + era mixing). World modes rebuild the same rig from `planet-eras.js`: each of the nine chapters carries a look (colors, cratering, maria, caps, basins, lava, water, scarps, canyons, volcanoes, bands, storms, bright clouds, polar hoods, comet scars, sunspots, ring alpha, spin, halo) that the render loop blends between. Saturn, Uranus and Neptune draw the shared ring shader with an era-driven alpha, opening angle and style.
-- The timeline, caption transitions, slider semantics and responsive layout are plain DOM and CSS.
-- The Pangaea texture is generated by `tools/gen_pangaea.py` (NumPy + OpenCV). It is an artistic reconstruction.
-- Everything runs offline after the page loads.
-
-## Project layout
-
-```
-index.html                 solar-system homepage and legacy deep-link redirect
-home.css                   homepage layout, strip and responsive rules
-home.js                    homepage scene, hover readout, axial motion, click-through
-planets.js                 shared procedural world shaders (homepage + timelines)
-planet-eras.js             nine chapters and looks per world
-timeline.html              timeline markup (all worlds), import map
-styles.css                 timeline layout, scrubber, world switcher, orbs
-main.js                    era data, shaders, input, render loop, world mode
-assets/                    local Three.js, textures and font
-shots/                     review screenshots
-reference/                 original reference video and frames
-tools/gen_pangaea.py       regenerate assets/pangaea.png
-tools/shoot.py             CDP screenshot helper
-tools/contact_sheet.py     rebuild shots/planet_timelines.png
-tools/test_ui.py           interaction smoke test
+```bash
+python -m pip install -r requirements.txt
+node tools/export_events.mjs --check
+python analysis/audit.py --check
+python -m pytest -q
 ```
 
-`shoot.py` and `test_ui.py` expect the local server above and a Chrome instance with remote debugging on port 9334 (`CDP_PORT` overrides it). Run that instance with `--force-device-scale-factor=1`: on a high-DPI Windows desktop, Chrome's default fractional scale can leave ghosted text in headless screenshots.
+Regenerate the committed artifacts after changing a CSV or a chapter:
+
+```bash
+node tools/export_events.mjs data/js-events.json
+python analysis/audit.py
+python -m pytest -q
+```
+
+The browser suite needs the local server plus Chrome with remote debugging:
 
 ```bash
 chrome --headless=new --remote-debugging-port=9334 --force-device-scale-factor=1 \
   --user-data-dir="$TEMP/chrome-shots" --window-size=1440,900 about:blank
+python tools/test_ui.py
 ```
 
-`shoot.py` accepts era numbers, `home`, `home-mobile`, `planets` (every world today), a single world (`planet-saturn`), a world chapter (`planet-neptune-5`), or `all`. `test_ui.py` checks homepage hover/CTA linking, axial rotation, real tilts and reduced-motion pausing, mobile scrolling; the legacy redirect; Earth deep links, keyboard, hover, pointer and touch scrubbing, globe dragging and mobile layout; then world timelines — Mars/Jupiter deep links and keysteps, Saturn's rings and era-driven opening, the world switcher (Earth's neighbours included), the Sun and Moon routes, mobile/reduced-motion routes, homepage click-through for planets, the Sun and the Moon, era-specific surfaces (Mercury's lava and Caloris, Venus's magma ocean and seas, Mars's Hellas and rivers, Jupiter's 1994 scars, the ice giants' bright clouds), and the top-left home control.
+## Project layout
 
-## Credits
+```text
+index.html                 solar-system homepage and legacy redirect
+timeline.html              timeline markup for all ten worlds
+data.html                  data story: charts, table, methods, limits
+home.css / styles.css      homepage and timeline styling
+data.css / data.js         data-page styling, SVG charts, table filters
+planet-eras.js             authored chapters and looks for nine worlds
+earth-eras.js              authored Earth chapters
+main.js / home.js          timeline and homepage renderers
+planets.js                 shared procedural world shaders
+assets/                    local Three.js, textures and font
+data/                      canonical CSV tables and generated analysis
+analysis/audit.py          validation, metrics, report generation
+reports/                   generated audit report
+tests/                     dataset, parity, analysis and page tests
+tools/export_events.mjs    presentation-to-dataset parity export
+tools/check_sources.py     network check for all source URLs
+tools/test_ui.py           Chrome DevTools regression suite
+tools/shoot.py             screenshot helper
+.github/workflows/ci.yml   parity, analysis and pytest checks
+```
 
-- Globe imagery: NASA Blue Marble, via the Three.js example textures.
-- [Three.js](https://threejs.org), MIT licensed.
-- Instrument Sans, SIL Open Font License 1.1.
-- Original timeline concept by [@quantapar](https://x.com/quantapar/status/2113562786265756046). This is an independent, non-commercial recreation.
+## Credits and license
+
+- Globe imagery: NASA Blue Marble. Planetary facts and mission records:
+  the sources in `data/sources.csv`, primarily NASA and ESA.
+- [Three.js](https://threejs.org), MIT licensed. Instrument Sans, SIL Open Font
+  License 1.1.
+- Original timeline concept by
+  [@quantapar](https://x.com/quantapar/status/2113562786265756046). This is an
+  independent, non-commercial recreation.
+
+The code is MIT licensed (see `LICENSE`). The data tables in `data/` are
+released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); cite
+this repository and the underlying sources.

@@ -100,6 +100,29 @@ body {
   letter-spacing: 0.005em;
 }
 
+.masthead__right {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  pointer-events: auto;
+}
+
+.masthead__link {
+  color: var(--muted);
+  font-size: 11px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.masthead__link:hover,
+.masthead__link:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
 /* stage ---------------------------------------------------------------- */
 
 .stage {

@@ -1,6 +1,7 @@
 """Smoke-test the homepage and timeline interactions through Chrome DevTools."""
 
 import base64
+import json
 import sys
 import time
 from pathlib import Path
@@ -68,6 +69,47 @@ def home_snapshot(cdp):
     })()""")
 
 
+def data_snapshot(cdp):
+    return evaluate(cdp, """(() => {
+      const tableWrap = document.querySelector('.table-wrap');
+      const ageCell = document.querySelector('.events .col-age');
+      const svgs = [...document.querySelectorAll('[data-chart] svg')];
+      return {
+        title: document.title,
+        h1: document.querySelector('h1') ? document.querySelector('h1').textContent : null,
+        ready: document.body.classList.contains('is-ready'),
+        error: document.body.classList.contains('has-error'),
+        charts: svgs.length,
+        chartHosts: document.querySelectorAll('[data-chart]').length,
+        chartAria: svgs.filter(s => s.getAttribute('role') === 'img' && s.getAttribute('aria-labelledby')).length,
+        chartErrors: document.querySelectorAll('.chart-error').length,
+        rows: document.querySelectorAll('#events-body tr').length,
+        count: document.querySelector('#table-count') ? document.querySelector('#table-count').textContent : null,
+        gapValues: [...document.querySelectorAll('#gaps .finding__value')].map(n => n.textContent.trim()),
+        overflow: document.documentElement.scrollWidth - window.innerWidth,
+        head: document.querySelector('.site-head') ? getComputedStyle(document.querySelector('.site-head')).position : null,
+        bodyOverflow: getComputedStyle(document.body).overflow,
+        colophon: document.querySelectorAll('.colophon').length,
+        tableOverflow: tableWrap ? getComputedStyle(tableWrap).overflow : null,
+        ageDisplay: ageCell ? getComputedStyle(ageCell).display : null,
+        downloads: document.querySelectorAll('a[download]').length,
+        appendix: document.querySelectorAll('.mini').length,
+        worldOptions: document.querySelectorAll('#table-world option').length,
+        chartFits: svgs.every(s => s.getBoundingClientRect().width <= s.parentElement.getBoundingClientRect().width + 1)
+      };
+    })()""")
+
+
+def set_table_filter(cdp, selector, value, event="change"):
+    return evaluate(cdp, f"""(() => {{
+      const el = document.querySelector({json.dumps(selector)});
+      if (!el) return null;
+      el.value = {json.dumps(value)};
+      el.dispatchEvent(new Event({json.dumps(event)}, {{ bubbles: true }}));
+      return el.value;
+    }})()""")
+
+
 def globe_state(cdp):
     return evaluate(cdp, """window.__globe ? {
       type: window.__globe.type,
@@ -99,7 +141,8 @@ def navigate(cdp, suffix="", width=1440, height=900, mobile=False, reduced=False
         "features": [{"name": "prefers-reduced-motion", "value": "reduce" if reduced else "no-preference"}]
     })
     cdp.send("Emulation.setTouchEmulationEnabled", {"enabled": mobile, "maxTouchPoints": 1})
-    path = "/timeline.html" if page == "timeline" else "/"
+    paths = {"timeline": "/timeline.html", "home": "/", "data": "/data.html"}
+    path = paths[page]
     cdp.send("Page.navigate", {"url": f"{BASE}{path}?{suffix}&t={int(time.time() * 1000)}"})
     if not wait_ready(cdp):
         # Rapid repeated navigation can occasionally leave Chrome waiting on
@@ -790,6 +833,79 @@ def main():
           "clicking the home control returns to the homepage", home_landed)
     check(home_landed["ready"] and home_landed["bodies"] == 10,
           "the returned homepage has all ten worlds", home_landed)
+
+    print("\n[9] data page")
+    navigate(cdp, "", page="data")
+    s = data_snapshot(cdp)
+    print("  ", {k: s[k] for k in ("ready", "charts", "rows", "count", "overflow", "gapValues")})
+    check(s["ready"] and not s["error"], "data page loads its dataset without an error state", s)
+    check(s["title"].startswith("The line is not a clock"), "data page has its own title", s["title"])
+    check(s["h1"] == "The line is not a clock", "data page leads with the thesis", s["h1"])
+    check(s["charts"] == 4 and s["chartHosts"] == 4, "all four SVG charts rendered", s["charts"])
+    check(s["chartAria"] == 4, "each chart carries an accessible name and description", s["chartAria"])
+    check(s["chartErrors"] == 0, "no chart fell back to its error state", s["chartErrors"])
+    check(s["rows"] == 90 and "90 of 90" in s["count"], "the table renders all ninety rows", s["count"])
+    check(s["overflow"] <= 0, "data page has no horizontal overflow at 1440", s["overflow"])
+    check(s["head"] != "fixed", "data page masthead is not fixed", s["head"])
+    check(s["bodyOverflow"] != "hidden", "data page does not hide body overflow", s["bodyOverflow"])
+    check(s["colophon"] == 0, "data page has no fixed colophon", s["colophon"])
+    check(s["tableOverflow"] == "auto", "the table scrolls inside its own frame", s["tableOverflow"])
+    check(s["downloads"] >= 4, "dataset downloads are linked", s["downloads"])
+    check(s["appendix"] >= 5, "generated appendix tables are rendered", s["appendix"])
+    check(s["worldOptions"] == 11, "the world filter lists all ten worlds", s["worldOptions"])
+    check("400 million years" in s["gapValues"], "the gaps finding keeps 400 million years", s["gapValues"])
+    check("9.2 billion years" in s["gapValues"], "the longest gap keeps 9.2 billion years", s["gapValues"])
+    check("93%" in s["gapValues"], "Saturn's gap share is rendered", s["gapValues"])
+    check(s["chartFits"], "charts fit their columns", s["chartFits"])
+
+    set_table_filter(cdp, "#table-world", "earth")
+    filtered = evaluate(cdp, """({
+      rows: document.querySelectorAll('#events-body tr').length,
+      count: document.querySelector('#table-count').textContent,
+      first: document.querySelector('#events-body tr td.world').textContent.trim()
+    })""")
+    print("  ", filtered)
+    check(filtered["rows"] == 9 and "9 of 90" in filtered["count"],
+          "the world filter narrows the table to Earth", filtered)
+    check(filtered["first"].startswith("Earth"), "the filtered rows stay in the selected world", filtered)
+
+    evaluate(cdp, "document.querySelector('#table-reset').click()")
+    set_table_filter(cdp, "#table-kind", "dated")
+    dated = evaluate(cdp, """({
+      rows: document.querySelectorAll('#events-body tr').length,
+      count: document.querySelector('#table-count').textContent
+    })""")
+    print("  ", dated)
+    check(dated["rows"] == 34 and "34 of 90" in dated["count"],
+          "the kind filter returns the thirty-four dated chapters", dated)
+
+    evaluate(cdp, "document.querySelector('#table-reset').click()")
+    set_table_filter(cdp, "#table-search", "Chicxulub", "input")
+    searched = evaluate(cdp, """({
+      rows: document.querySelectorAll('#events-body tr').length,
+      text: document.querySelector('#events-body tr').textContent
+    })""")
+    print("  ", {"rows": searched["rows"]})
+    check(searched["rows"] == 1 and "Chicxulub" in searched["text"],
+          "search reaches event text", searched)
+
+    evaluate(cdp, "document.querySelector('#table-reset').click()")
+    reset = evaluate(cdp, """({
+      rows: document.querySelectorAll('#events-body tr').length,
+      count: document.querySelector('#table-count').textContent
+    })""")
+    check(reset["rows"] == 90 and "90 of 90" in reset["count"],
+          "reset restores the full table", reset)
+
+    print("\n[9b] data page mobile")
+    navigate(cdp, "", width=390, height=844, mobile=True, page="data")
+    s = data_snapshot(cdp)
+    print("  ", {k: s[k] for k in ("charts", "rows", "overflow", "ageDisplay", "chartFits")})
+    check(s["ready"] and not s["error"], "data page loads on mobile", s["ready"])
+    check(s["charts"] == 4 and s["chartFits"], "mobile charts fit the viewport", s["chartFits"])
+    check(s["rows"] == 90, "mobile table renders all rows", s["rows"])
+    check(s["overflow"] <= 0, "data page has no horizontal overflow at 390", s["overflow"])
+    check(s["ageDisplay"] == "none", "mobile table drops the secondary age column", s["ageDisplay"])
 
     cdp.close()
     print("\n" + ("FAILURES: " + "; ".join(failures) if failures else "All checks passed."))

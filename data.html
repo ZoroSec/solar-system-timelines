@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbfbf9" />
+  <title>The line is not a clock — data &amp; methods</title>
+  <meta name="description" content="The dataset behind the solar-system timelines: ninety chapters, ten worlds, thirty-six sources, and a measured account of what editorial spacing does to deep time." />
+  <link rel="stylesheet" href="./data.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <a class="brand" href="./">earth <span aria-hidden="true">/</span> timeline</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="./">Solar system</a>
+      <a href="./timeline.html">Timeline</a>
+      <a href="./data.html" aria-current="page">Data &amp; methods</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="hero">
+      <p class="kicker">Data &amp; methods <span aria-hidden="true">/</span> 01</p>
+      <h1>The line is not a clock</h1>
+      <p class="dek">Ten worlds, ninety chapters, thirty-six sources. The timelines are an editorial arrangement — and that arrangement can be measured. This is the dataset behind the site, and what it reveals about the way we draw deep time.</p>
+      <ul class="hero__meta" aria-label="Dataset summary">
+        <li><span data-stat="chapters">90</span> chapters</li>
+        <li><span data-stat="worlds">10</span> worlds</li>
+        <li><span data-stat="sources">36</span> sources</li>
+        <li>Snapshot <time datetime="2026-10-27">2026-10-27</time></li>
+      </ul>
+      <div class="hero__rule" aria-hidden="true"></div>
+    </header>
+
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro__body">
+        <h2 class="sr-only" id="intro-title">Introduction</h2>
+        <p class="lede">The timelines on this site are drawn as lines. The space between chapters is chosen to keep the recent record legible, not to measure elapsed time. That is a defensible editorial choice. It is also a transformation of the data — and transformations should be disclosed.</p>
+        <p>This page publishes the table behind the timelines, measures what the layout does to time, and states what the sample cannot support. Every number below is generated from <code>data/events.csv</code> by <code>analysis/audit.py</code>; none of it is typed into the charts by hand.</p>
+      </div>
+      <aside class="brief" aria-labelledby="brief-title">
+        <p class="brief__kicker" id="brief-title">At a glance</p>
+        <dl>
+          <div>
+            <dt><span data-stat="earth-expansion">43.9×</span></dt>
+            <dd>stretch in Earth's final interval: <span data-stat="earth-final-line">21%</span> of the line, <span data-stat="earth-final-time">0.48%</span> of the time.</dd>
+          </div>
+          <div>
+            <dt><span data-stat="deep-median">400 million years</span> <span class="brief__vs">vs</span> <span data-stat="dated-median">55 years</span></dt>
+            <dd>median gap between chapters in the deep-time and dated records.</dd>
+          </div>
+          <div>
+            <dt><span data-stat="earth-dated">0</span></dt>
+            <dd>dated chapters on Earth's line. Every world ends with a present-day state.</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="chapter" id="sample" aria-labelledby="sample-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">02</span>
+        <span class="chapter__label">The sample</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="sample-title">A sample of ninety moments</h2>
+        <p class="prose">Every world has nine chapters. That is a format constraint, not a finding. The marks below sit at their editorial positions, so the pattern is a property of the design as much as of the history.</p>
+        <p class="prose">The <span data-stat="deep-count">46</span> deep-time chapters describe formation and geology. The <span data-stat="dated-count">34</span> dated chapters describe telescopes, missions, and measurements. The <span data-stat="today-count">10</span> Today states close each line. The mix is the sample.</p>
+
+        <figure class="chart">
+          <figcaption class="chart__head">
+            <span class="chart__title" id="coverage-title">Chapter coverage by world</span>
+            <span class="chart__note">Each mark is one chapter at its editorial position</span>
+          </figcaption>
+          <div class="chart__canvas" data-chart="coverage"></div>
+          <div class="legend" aria-hidden="true">
+            <span class="legend__item"><span class="legend__mark legend__mark--deep"></span>Deep time</span>
+            <span class="legend__item"><span class="legend__mark legend__mark--dated"></span>Dated observation</span>
+            <span class="legend__item"><span class="legend__mark legend__mark--today"></span>Today</span>
+          </div>
+          <p class="chart__source">Positions are <code>layout_at</code>, 0–1. They are not years.</p>
+          <details class="chart__data">
+            <summary>Data behind this chart</summary>
+            <div data-table="coverage"></div>
+          </details>
+        </figure>
+
+        <div class="finding-grid">
+          <div class="finding">
+            <span class="finding__value" data-stat="first-dated-min">39%</span>
+            <span class="finding__label">of <span data-stat="first-dated-min-world">Jupiter</span>'s line before its first dated chapter</span>
+          </div>
+          <div class="finding">
+            <span class="finding__value" data-stat="first-dated-max">74%</span>
+            <span class="finding__label">of <span data-stat="first-dated-max-world">Mars</span>'s line before its first dated chapter</span>
+          </div>
+          <div class="finding">
+            <span class="finding__value finding__value--signal" data-stat="earth-dated-2">0</span>
+            <span class="finding__label">dated chapters on Earth's line; its record is deep time plus Today</span>
+          </div>
+        </div>
+
+        <p class="prose prose--small">The dated record does not begin at the same place on every line. It starts late and clusters at the recent end. That is a property of what the sample chose to observe, not a claim that nothing was recorded earlier.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="distortion" aria-labelledby="distortion-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">03</span>
+        <span class="chapter__label">The distortion</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="distortion-title">A 44× stretch at the recent end</h2>
+        <p class="prose">The top bar is the line as published. The bottom bar is the same eight intervals drawn at true duration. The last interval — <em>Chicxulub</em> to today — receives <span data-stat="earth-final-line-2">21%</span> of the line while representing <span data-stat="earth-final-time-2">0.48%</span> of Earth's <span data-stat="earth-span">13.8 billion years</span>.</p>
+        <p class="prose">The first interval — <em>Big Bang</em> to <em>Protoplanet</em> — receives <span data-stat="earth-first-line">7.5%</span> of the line and represents <span data-stat="earth-first-time">66.67%</span> of the time. The line buys legibility at the recent end by spending it at the far end.</p>
+
+        <figure class="chart">
+          <figcaption class="chart__head">
+            <span class="chart__title" id="earth-title">Earth: the same intervals, two scales</span>
+            <span class="chart__note">Editorial spacing above, true duration below</span>
+          </figcaption>
+          <div class="chart__canvas" data-chart="earth"></div>
+          <p class="chart__source">Eight consecutive intervals from <code>data/events.csv</code>. The bars are not to the same scale.</p>
+          <details class="chart__data">
+            <summary>Data behind this chart</summary>
+            <div data-table="earth"></div>
+          </details>
+        </figure>
+
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat__value" data-stat="earth-expansion-2">43.9×</span>
+            <span class="stat__label">expansion of the final interval relative to a linear axis</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" data-stat="earth-last-vs-first">399×</span>
+            <span class="stat__label">the final interval's stretch divided by the first's</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value stat__value--signal" data-stat="earth-final-time-3">0.48%</span>
+            <span class="stat__label">of Earth's time in the last 21% of its line</span>
+          </div>
+        </div>
+
+        <p class="pull">A linear axis would be honest about duration and unreadable about people. The editorial axis makes the recent record visible — as long as the trade-off is named.</p>
+
+        <p class="prose prose--small">The final interval is 66 million years long because the preceding chapter is Chicxulub. It includes the whole of human history, which is invisible at the scale of a 13.8-billion-year line. The distortion is the mechanism that makes that history drawable at all.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="gaps" aria-labelledby="gaps-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">04</span>
+        <span class="chapter__label">The silences</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="gaps-title">What the line leaves out</h2>
+        <p class="prose">A gap is the distance between consecutive chapters. It is a property of the sample, not evidence that nothing happened. The bars below normalize each world's largest gap by that world's own span, so a longer history does not automatically produce a larger share.</p>
+
+        <figure class="chart">
+          <figcaption class="chart__head">
+            <span class="chart__title" id="gaps-title-chart">Largest unsampled interval, by world</span>
+            <span class="chart__note">Share of each world's own timeline</span>
+          </figcaption>
+          <div class="chart__canvas" data-chart="gaps"></div>
+          <p class="chart__source">The interval between the two consecutive chapters with the greatest age difference. Longer bars mean a larger share of that world's span is unrepresented.</p>
+          <details class="chart__data">
+            <summary>Data behind this chart</summary>
+            <div data-table="gaps"></div>
+          </details>
+        </figure>
+
+        <div class="finding-grid">
+          <div class="finding">
+            <span class="finding__value" data-stat="max-gap-share">93%</span>
+            <span class="finding__label">of <span data-stat="max-gap-world">Saturn</span>'s span is covered by its largest gap</span>
+          </div>
+          <div class="finding">
+            <span class="finding__value" data-stat="longest-gap-years">9.2 billion years</span>
+            <span class="finding__label">the longest gap in years, on <span data-stat="longest-gap-world">Earth</span>'s line</span>
+          </div>
+          <div class="finding">
+            <span class="finding__value" data-stat="deep-median-2">400 million years</span>
+            <span class="finding__label">median gap between consecutive deep-time chapters</span>
+          </div>
+        </div>
+
+        <p class="prose prose--small">Earth's gap is the longest in absolute years: 9.2 billion years between the Big Bang and the protoplanet. Saturn's is the largest share of its own span. The two measures answer different questions, and the chart deliberately uses the second.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="tempo" aria-labelledby="tempo-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">05</span>
+        <span class="chapter__label">The record</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="tempo-title">Two tempos, one table</h2>
+        <p class="prose">The sample contains two regimes. Deep-time chapters are separated by hundreds of millions of years. Dated observations are separated by decades or years. A single average would describe neither.</p>
+
+        <figure class="chart">
+          <figcaption class="chart__head">
+            <span class="chart__title" id="mix-title">Record mix and dated observations</span>
+            <span class="chart__note">Nine chapters per world; dated chapters by century</span>
+          </figcaption>
+          <div class="chart__canvas" data-chart="mix"></div>
+          <div class="legend" aria-hidden="true">
+            <span class="legend__item"><span class="legend__mark legend__mark--deep"></span>Deep time</span>
+            <span class="legend__item"><span class="legend__mark legend__mark--dated"></span>Dated observation</span>
+            <span class="legend__item"><span class="legend__mark legend__mark--today"></span>Today</span>
+          </div>
+          <p class="chart__source">The lower panel counts the <span data-stat="dated-count-2">34</span> dated chapters by the century of the observation. A chapter labeled <code>1610</code> falls in the 1600s.</p>
+          <details class="chart__data">
+            <summary>Data behind this chart</summary>
+            <div data-table="mix"></div>
+          </details>
+        </figure>
+
+        <div class="tempo">
+          <div class="tempo__item">
+            <span class="tempo__value" data-stat="deep-median-3">400 million years</span>
+            <span class="tempo__label">median deep-time gap</span>
+          </div>
+          <span class="tempo__vs" aria-hidden="true">vs</span>
+          <div class="tempo__item">
+            <span class="tempo__value" data-stat="dated-median-2">55 years</span>
+            <span class="tempo__label">median dated-record gap</span>
+          </div>
+        </div>
+
+        <p class="prose prose--small"><span data-stat="century-share">71%</span> of the dated chapters fall in just two centuries — the <span data-stat="century-peaks">1600s and 1900s</span>. The dated record is a history of observation, not a uniform sample of time. Only <span data-stat="dated-worlds">9</span> of the ten worlds have a dated chapter at all.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="dataset" aria-labelledby="dataset-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">06</span>
+        <span class="chapter__label">The table</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="dataset-title">The ninety rows behind the story</h2>
+        <p class="prose">The canonical table is <code>events.csv</code>: one row per chapter, seventeen columns. <code>worlds.csv</code> holds the ten world records; <code>sources.csv</code> holds thirty-six citations. <code>analysis.json</code> is generated from all three by <code>analysis/audit.py</code>.</p>
+
+        <div class="dataset">
+          <div class="dataset__head">
+            <div>
+              <span class="dataset__title">events.csv</span>
+              <span class="dataset__meta">90 rows · UTF-8 · ages in years before 2026</span>
+            </div>
+            <div class="dataset__actions">
+              <a class="download-link" href="./data/events.csv" download>Download CSV</a>
+              <a class="download-link" href="./data/analysis.json" download>analysis.json</a>
+            </div>
+          </div>
+
+          <div class="filters" role="group" aria-label="Filter the event table">
+            <label class="field field--search">
+              <span>Search</span>
+              <input id="table-search" type="search" placeholder="Event, note, source, year…" autocomplete="off" />
+            </label>
+            <label class="field">
+              <span>World</span>
+              <select id="table-world">
+                <option value="">All worlds</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Time kind</span>
+              <select id="table-kind">
+                <option value="">All kinds</option>
+                <option value="deep_time">Deep time</option>
+                <option value="dated">Dated</option>
+                <option value="today">Today</option>
+              </select>
+            </label>
+            <button class="reset" id="table-reset" type="button">Reset</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="events">
+              <caption class="sr-only">The ninety chapters in the dataset, one row per world chapter.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">World</th>
+                  <th scope="col">Time</th>
+                  <th scope="col" class="num col-age">Age</th>
+                  <th scope="col">Kind</th>
+                  <th scope="col">Event</th>
+                  <th scope="col" class="col-evidence">Evidence</th>
+                  <th scope="col" class="col-source">Source</th>
+                </tr>
+              </thead>
+              <tbody id="events-body">
+                <tr><td colspan="7" class="table-empty">Loading the dataset…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-foot">
+            <span id="table-count" aria-live="polite">Showing 90 of 90 rows</span>
+            <span>Snapshot 2026-10-27</span>
+          </div>
+        </div>
+
+        <div class="downloads">
+          <a class="download" href="./data/worlds.csv" download>
+            <span class="download__name">worlds.csv</span>
+            <span class="download__meta">10 world records</span>
+          </a>
+          <a class="download" href="./data/sources.csv" download>
+            <span class="download__name">sources.csv</span>
+            <span class="download__meta">36 citations</span>
+          </a>
+          <a class="download" href="./data/README.md">
+            <span class="download__name">data dictionary</span>
+            <span class="download__meta">Columns, units, caveats</span>
+          </a>
+          <a class="download" href="./reports/time-axis-audit.md">
+            <span class="download__name">audit report</span>
+            <span class="download__meta">Generated findings</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="methods" aria-labelledby="methods-title">
+      <div class="chapter__rail" aria-hidden="true">
+        <span class="chapter__num">07</span>
+        <span class="chapter__label">Methods &amp; limits</span>
+      </div>
+      <div class="chapter__body">
+        <h2 id="methods-title">What this can and cannot say</h2>
+        <p class="prose">This is a curated comparative sample, not a random sample, a complete chronology, or a time series. The analysis is designed to make that limitation visible rather than to hide it behind a single score.</p>
+
+        <div class="methods">
+          <article class="method">
+            <h3>The sample</h3>
+            <p>Ten worlds, nine chapters each. The order and start label for each world live in <code>worlds.csv</code>. The equal chapter count is a format constraint, not a finding.</p>
+          </article>
+          <article class="method">
+            <h3>The numbers</h3>
+            <p>Ages are years before 2026. <code>layout_at</code> is an editorial coordinate from 0 to 1 and must never be used to estimate elapsed time. A blank range means no numeric range was assigned, not certainty.</p>
+          </article>
+          <article class="method">
+            <h3>The pipeline</h3>
+            <p><code>analysis/audit.py</code> validates the three CSVs, derives the charts, and writes <code>analysis.json</code> plus the audit report. <code>--check</code> fails if either artifact is stale.</p>
+          </article>
+        </div>
+
+        <div class="limits">
+          <h3>Limitations</h3>
+          <ul>
+            <li>The ninety chapters are a <strong>curated sample</strong>, chosen to tell a coherent story. They are not a random or complete inventory of events.</li>
+            <li>The largest gap is a property of the sample. It is not evidence that nothing happened during that interval.</li>
+            <li>“Today” is a snapshot at <strong>2026-10-27</strong>, not a live feed. Planned missions are marked as planned.</li>
+            <li>Age ranges are recorded only where cited sources genuinely disagree. Most rows have a point age.</li>
+            <li>The globes are illustrations. Only Earth uses spacecraft imagery; the other surfaces are procedural and not spatially registered.</li>
+            <li>The dated record is a history of observation. Its clusters reflect telescopes, spacecraft, and access to instruments, not the underlying rate of events.</li>
+          </ul>
+        </div>
+
+        <div class="reproduce">
+          <h3>Reproduce it</h3>
+          <pre><code>python analysis/audit.py
+python analysis/audit.py --check
+python -m pytest -q</code></pre>
+          <p>Source: <a href="https://github.com/ZoroSec/solar-system-timelines">github.com/ZoroSec/solar-system-timelines</a>. The data table is released under CC BY 4.0; the code is MIT licensed.</p>
+        </div>
+
+        <p class="prose prose--small">Read the full method in <a href="./data/README.md">the data dictionary</a>, the generated findings in <a href="./reports/time-axis-audit.md">the audit report</a>, or the implementation in <a href="./analysis/audit.py">analysis/audit.py</a>. Corrections start with the CSV and its source, then regenerate the analysis and the site copy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>Earth imagery: NASA Blue Marble. Data snapshot 2026-10-27. <a href="./data/sources.csv">Thirty-six sources</a>.</p>
+    <nav aria-label="Footer">
+      <a href="./">Solar system</a>
+      <a href="./timeline.html">Timeline</a>
+      <a href="https://github.com/ZoroSec/solar-system-timelines">GitHub</a>
+    </nav>
+  </footer>
+
+  <noscript>
+    <p class="no-script">The charts and the filterable table load from local JSON and CSV files with JavaScript. The downloadable datasets below remain available.</p>
+  </noscript>
+
+  <p id="data-status" class="sr-only" role="status" aria-live="polite"></p>
+  <script type="module" src="./data.js"></script>
+</body>
+</html>

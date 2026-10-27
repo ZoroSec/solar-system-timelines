@@ -5,6 +5,8 @@ Usage:
     python tools/shoot.py 0 4 8           # selected eras
     python tools/shoot.py home            # homepage, desktop
     python tools/shoot.py home-mobile     # homepage, phone
+    python tools/shoot.py data            # data story, desktop
+    python tools/shoot.py data-mobile     # data story, phone
     python tools/shoot.py planets         # every world timeline, today
     python tools/shoot.py planet-saturn   # one planet timeline, today
     python tools/shoot.py planet-mars-3   # one planet, chapter 3
@@ -160,6 +162,16 @@ def main():
                 width=390,
                 height=844,
                 mobile=True,
+            )
+        elif target in ("data", "data-mobile"):
+            shoot(
+                cdp,
+                f"{SITE}/data.html?shot={stamp}",
+                OUT / ("data.png" if target == "data" else "data_mobile.png"),
+                wait=1.8,
+                width=1440 if target == "data" else 390,
+                height=900 if target == "data" else 844,
+                mobile=target == "data-mobile",
             )
         elif target.startswith("planet-"):
             parts = target.split("-")

@@ -75,7 +75,7 @@ export const PLANETS = {
       {
         at: 0.39,
         time: "4.1 billion years ago",
-        event: "Steady state",
+        event: "Main sequence",
         note: "The long main sequence begins",
         heat: 1,
         spots: 0.8,
@@ -267,8 +267,8 @@ export const PLANETS = {
       {
         at: 0.87,
         time: "1972",
-        event: "Samples home",
-        note: "Basalt and anorthosite return to Earth",
+        event: "Last samples",
+        note: "Apollo 17 returns the final lunar samples",
         spin: -1.7,
       },
       {
@@ -428,7 +428,7 @@ export const PLANETS = {
         at: 1,
         time: "Today",
         event: "BepiColombo",
-        note: "Europe and Japan arrive at orbit",
+        note: "Orbit insertion is due in November 2026",
         crater: 1,
         caps: 0.12,
         maria: 0.3,
@@ -1016,8 +1016,8 @@ export const PLANETS = {
       {
         at: 0.52,
         time: "1655",
-        event: "One ring, one Titan",
-        note: "Huygens resolves both mysteries",
+        event: "Titan and the ring",
+        note: "Titan is found; the ring shape follows in 1659",
         bands: 16,
         ringAlpha: 1,
         ringTilt: 1.3,

@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "presentYear": 2026,
+  "worlds": [
+    {
+      "key": "sun",
+      "name": "Sun",
+      "type": "sun",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Photosphere after SDO and Solar Orbiter",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "The cloud collapses",
+          "note": "A protostar gathers in the disk"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.57 billion years ago",
+          "event": "Ignition",
+          "note": "Fusion switches on in the core"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4.5 billion years ago",
+          "event": "Young and violent",
+          "note": "A fierce wind sweeps the disk clear"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "4.1 billion years ago",
+          "event": "Main sequence",
+          "note": "The long main sequence begins"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "1610",
+          "event": "Spots traced",
+          "note": "Galileo sketches blemishes that move"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1859",
+          "event": "Carrington flare",
+          "note": "A storm lights the telegraph wires"
+        },
+        {
+          "index": 6,
+          "at": 0.74,
+          "time": "1995",
+          "event": "SOHO",
+          "note": "The Sun watched around the clock"
+        },
+        {
+          "index": 7,
+          "at": 0.87,
+          "time": "2020",
+          "event": "Solar Orbiter",
+          "note": "Close enough to see the poles"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Solar maximum",
+          "note": "Sunspots, flares, and a restless corona"
+        }
+      ]
+    },
+    {
+      "key": "mercury",
+      "name": "Mercury",
+      "type": "rock",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Surface drawn from MESSENGER surveys",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "Condenses nearest the Sun"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.5 billion years ago",
+          "event": "Iron world",
+          "note": "A giant core, a paper-thin crust"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4.1 billion years ago",
+          "event": "Erupting plains",
+          "note": "Lava floods the basins"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "3.9 billion years ago",
+          "event": "Caloris basin",
+          "note": "A 1,550-kilometre impact scar"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "3.5 billion years ago",
+          "event": "The shrinking",
+          "note": "The core cools and the crust buckles"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1631",
+          "event": "The first transit",
+          "note": "Gassendi watches it cross the Sun"
+        },
+        {
+          "index": 6,
+          "at": 0.74,
+          "time": "1889",
+          "event": "Ink and maps",
+          "note": "Schiaparelli charts the sun-baked face"
+        },
+        {
+          "index": 7,
+          "at": 0.87,
+          "time": "1974",
+          "event": "Mariner 10",
+          "note": "The first close approach"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "BepiColombo",
+          "note": "Orbit insertion is due in November 2026"
+        }
+      ]
+    },
+    {
+      "key": "venus",
+      "name": "Venus",
+      "type": "air",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Clouds after Magellan and Venera",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "Born of the same restless dust"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.5 billion years ago",
+          "event": "Magma ocean",
+          "note": "Molten rock for a hundred million years"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4 billion years ago",
+          "event": "Temperate years",
+          "note": "A young Venus may have held oceans"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "3 billion years ago",
+          "event": "The runaway",
+          "note": "Oceans boil; the CO2 sky thickens"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "700 million years ago",
+          "event": "Resurfacing",
+          "note": "Rivers of lava repave the whole planet"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1610",
+          "event": "Galileo's phases",
+          "note": "A disk that waxes like a little moon"
+        },
+        {
+          "index": 6,
+          "at": 0.74,
+          "time": "1962",
+          "event": "Mariner 2",
+          "note": "The first flyby of another planet"
+        },
+        {
+          "index": 7,
+          "at": 0.87,
+          "time": "1970",
+          "event": "Venera 7",
+          "note": "The first landing on another world"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Cloud world",
+          "note": "465°C beneath an unbroken ceiling"
+        }
+      ]
+    },
+    {
+      "key": "earth",
+      "name": "Earth",
+      "type": "earth",
+      "headline": "One line through 13.8 billion years",
+      "startShort": "13.8B years ago",
+      "credit": "Imagery: NASA Blue Marble",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "13.8 billion years ago",
+          "event": "Big Bang",
+          "note": "The universe begins"
+        },
+        {
+          "index": 1,
+          "at": 0.075,
+          "time": "4.6 billion years ago",
+          "event": "Protoplanet",
+          "note": "Dust and rock collide"
+        },
+        {
+          "index": 2,
+          "at": 0.112,
+          "time": "4.5 billion years ago",
+          "event": "Magma ocean",
+          "note": "The surface is molten"
+        },
+        {
+          "index": 3,
+          "at": 0.152,
+          "time": "4.4 billion years ago",
+          "event": "First oceans",
+          "note": "Steam falls as rain"
+        },
+        {
+          "index": 4,
+          "at": 0.285,
+          "time": "3.7 billion years ago",
+          "event": "First life",
+          "note": "Microbes under a hazy sky"
+        },
+        {
+          "index": 5,
+          "at": 0.56,
+          "time": "650 million years ago",
+          "event": "Snowball Earth",
+          "note": "Ice reaches the equator"
+        },
+        {
+          "index": 6,
+          "at": 0.662,
+          "time": "250 million years ago",
+          "event": "Pangaea",
+          "note": "One supercontinent"
+        },
+        {
+          "index": 7,
+          "at": 0.79,
+          "time": "66 million years ago",
+          "event": "Chicxulub",
+          "note": "An asteroid ends the dinosaurs"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Earth",
+          "note": "8.2 billion people"
+        }
+      ]
+    },
+    {
+      "key": "moon",
+      "name": "Moon",
+      "type": "rock",
+      "headline": "One line through 4.5 billion years",
+      "startShort": "4.5B years ago",
+      "credit": "Surface after Apollo, LRO and Artemis",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.5 billion years ago",
+          "event": "A giant impact",
+          "note": "Theia strikes; a molten ring gathers"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.4 billion years ago",
+          "event": "Magma ocean",
+          "note": "A ball of fire cools above Earth"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4.3 billion years ago",
+          "event": "First crust",
+          "note": "Anorthosite highlands solidify"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "3.9 billion years ago",
+          "event": "Bombardment",
+          "note": "Basins carve a face we still know"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "3.2 billion years ago",
+          "event": "Maria",
+          "note": "Lava floods the near side"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1610",
+          "event": "Galileo's map",
+          "note": "A face drawn in ink and shadow"
+        },
+        {
+          "index": 6,
+          "at": 0.74,
+          "time": "1969",
+          "event": "Apollo 11",
+          "note": "Six hundred million watch the first steps"
+        },
+        {
+          "index": 7,
+          "at": 0.87,
+          "time": "1972",
+          "event": "Last samples",
+          "note": "Apollo 17 returns the final lunar samples"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Artemis",
+          "note": "A new generation heads back"
+        }
+      ]
+    },
+    {
+      "key": "mars",
+      "name": "Mars",
+      "type": "rock",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Surface after Viking, HiRISE and Perseverance",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "A companion world condenses"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.1 billion years ago",
+          "event": "Borealis impact",
+          "note": "A planet-sized blow flattens the north"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "3.9 billion years ago",
+          "event": "Hellas",
+          "note": "One basin swallows whole provinces"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "3.7 billion years ago",
+          "event": "Rivers and lakes",
+          "note": "Deltas build at Jezero"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "3 billion years ago",
+          "event": "Tharsis rises",
+          "note": "Volcano towers over volcano"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "2 billion years ago",
+          "event": "Drying",
+          "note": "Ice locks away at the poles"
+        },
+        {
+          "index": 6,
+          "at": 0.74,
+          "time": "1877",
+          "event": "Imaginary canals",
+          "note": "Schiaparelli's channels ignite fiction"
+        },
+        {
+          "index": 7,
+          "at": 0.87,
+          "time": "1976",
+          "event": "Viking 1",
+          "note": "The first working landing on Mars"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Perseverance",
+          "note": "Hunting ancient life in Jezero"
+        }
+      ]
+    },
+    {
+      "key": "jupiter",
+      "name": "Jupiter",
+      "type": "gas",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Bands after Cassini, Voyager and Juno",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "The firstborn",
+          "note": "The first core gathers the disk around it"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.5 billion years ago",
+          "event": "The Grand Tack",
+          "note": "Sweeps inward, then out, stirring the belt"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4 billion years ago",
+          "event": "Four moons",
+          "note": "Io, Europa, Ganymede, Callisto settle"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "1610",
+          "event": "Galileo looks",
+          "note": "Moons that move — a revolution in the sky"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "1665",
+          "event": "The Storm",
+          "note": "Rival astronomers record a great red oval"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1979",
+          "event": "Voyager",
+          "note": "Io erupts; a faint ring encircles"
+        },
+        {
+          "index": 6,
+          "at": 0.78,
+          "time": "1994",
+          "event": "Comet crash",
+          "note": "Shoemaker–Levy 9 slams into the cloud tops"
+        },
+        {
+          "index": 7,
+          "at": 0.89,
+          "time": "2016",
+          "event": "Juno",
+          "note": "Polar cyclones, deep winds, a fuzzy core"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Ocean missions",
+          "note": "Europa Clipper and JUICE are en route"
+        }
+      ]
+    },
+    {
+      "key": "saturn",
+      "name": "Saturn",
+      "type": "gas",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Rings crafted from the Cassini archive",
+      "ringStyle": 0,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "A second giant condenses in the quiet"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.4 billion years ago",
+          "event": "Titan is born",
+          "note": "A thick haze keeps a moon warm"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "100 million years ago",
+          "event": "The rings",
+          "note": "A shattered moon becomes rings of ice"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "1610",
+          "event": "Handles",
+          "note": "Galileo sketches something on either side"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "1655",
+          "event": "Titan and the ring",
+          "note": "Titan is found; the ring shape follows in 1659"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1675",
+          "event": "The great gap",
+          "note": "Cassini finds the dark division"
+        },
+        {
+          "index": 6,
+          "at": 0.78,
+          "time": "1980",
+          "event": "Voyager 1",
+          "note": "Rings of gold rush past in the flyby"
+        },
+        {
+          "index": 7,
+          "at": 0.89,
+          "time": "2005",
+          "event": "Huygens lands",
+          "note": "Titan has rain, rivers and lakes"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Ring rain",
+          "note": "The rings are slowly being fed back"
+        }
+      ]
+    },
+    {
+      "key": "uranus",
+      "name": "Uranus",
+      "type": "air",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Disk and tilt after Voyager 2",
+      "ringStyle": 1,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "An ice giant condenses in the dark"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.5 billion years ago",
+          "event": "The knock",
+          "note": "An Earth-sized body tips it on its side"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4 billion years ago",
+          "event": "A mantle of ice",
+          "note": "Water, methane, ammonia over a stone heart"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "2 billion years ago",
+          "event": "Moons in line",
+          "note": "Dark little moons circle the equator"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "1781",
+          "event": "A comet, not a comet",
+          "note": "Herschel discovers a planet"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1787",
+          "event": "Titania and Oberon",
+          "note": "The first two moons are found"
+        },
+        {
+          "index": 6,
+          "at": 0.78,
+          "time": "1977",
+          "event": "Rings by accident",
+          "note": "A distant star blinks through their arcs"
+        },
+        {
+          "index": 7,
+          "at": 0.89,
+          "time": "1986",
+          "event": "Voyager 2",
+          "note": "The only visit ever paid"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Waiting",
+          "note": "No one has come back since"
+        }
+      ]
+    },
+    {
+      "key": "neptune",
+      "name": "Neptune",
+      "type": "air",
+      "headline": "One line through 4.6 billion years",
+      "startShort": "4.6B years ago",
+      "credit": "Disk after Voyager 2 and JWST",
+      "ringStyle": 2,
+      "chapters": [
+        {
+          "index": 0,
+          "at": 0,
+          "time": "4.6 billion years ago",
+          "event": "Formation",
+          "note": "Condenses in the deep cold"
+        },
+        {
+          "index": 1,
+          "at": 0.13,
+          "time": "4.5 billion years ago",
+          "event": "Out to the edge",
+          "note": "Scattered outward as the giants migrate"
+        },
+        {
+          "index": 2,
+          "at": 0.26,
+          "time": "4 billion years ago",
+          "event": "Triton, backwards",
+          "note": "A Kuiper-belt world is captured"
+        },
+        {
+          "index": 3,
+          "at": 0.39,
+          "time": "1612",
+          "event": "A misplaced star",
+          "note": "Galileo logs it twice as fixed"
+        },
+        {
+          "index": 4,
+          "at": 0.52,
+          "time": "1846",
+          "event": "Found with mathematics",
+          "note": "Le Verrier predicts it; Galle sees it"
+        },
+        {
+          "index": 5,
+          "at": 0.64,
+          "time": "1989",
+          "event": "Voyager 2",
+          "note": "A Great Dark Spot; winds faster than sound"
+        },
+        {
+          "index": 6,
+          "at": 0.78,
+          "time": "1994",
+          "event": "The Spot is gone",
+          "note": "Hubble returns to a spotless face"
+        },
+        {
+          "index": 7,
+          "at": 0.89,
+          "time": "2011",
+          "event": "One lap of the Sun",
+          "note": "The first Neptunian year since discovery"
+        },
+        {
+          "index": 8,
+          "at": 1,
+          "time": "Today",
+          "event": "Rings and storms",
+          "note": "JWST draws the rings in infrared"
+        }
+      ]
+    }
+  ]
+}

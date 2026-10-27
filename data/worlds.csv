@@ -1,0 +1,11 @@
+world,order,name,body_type,start_label,chapter_count,headline,credit,source_id
+sun,0,Sun,star,4.6B years ago,9,One line through 4.6 billion years,Photosphere after SDO and Solar Orbiter,nasa-sun
+mercury,1,Mercury,planet,4.6B years ago,9,One line through 4.6 billion years,Surface drawn from MESSENGER surveys,nasa-mercury
+venus,2,Venus,planet,4.6B years ago,9,One line through 4.6 billion years,Clouds after Magellan and Venera,nasa-venus
+earth,3,Earth,planet,13.8B years ago,9,One line through 13.8 billion years,Imagery: NASA Blue Marble,nasa-earth
+moon,4,Moon,moon,4.5B years ago,9,One line through 4.5 billion years,"Surface after Apollo, LRO and Artemis",nasa-moon
+mars,5,Mars,planet,4.6B years ago,9,One line through 4.6 billion years,"Surface after Viking, HiRISE and Perseverance",nasa-mars
+jupiter,6,Jupiter,planet,4.6B years ago,9,One line through 4.6 billion years,"Bands after Cassini, Voyager and Juno",nasa-jupiter
+saturn,7,Saturn,planet,4.6B years ago,9,One line through 4.6 billion years,Rings crafted from the Cassini archive,nasa-saturn
+uranus,8,Uranus,planet,4.6B years ago,9,One line through 4.6 billion years,Disk and tilt after Voyager 2,nasa-uranus
+neptune,9,Neptune,planet,4.6B years ago,9,One line through 4.6 billion years,Disk after Voyager 2 and JWST,nasa-neptune

@@ -1,0 +1,91 @@
+event_id,world,chapter,layout_at,time_label,years_ago,years_ago_low,years_ago_high,time_kind,event,note,event_class,evidence,status,source_id,source_note,as_of
+sun_01,sun,0,0,4.6 billion years ago,4600000000,,,deep_time,The cloud collapses,A protostar gathers in the disk,formation,inferred,past,nasa-sun,,2026-10-27
+sun_02,sun,1,0.13,4.57 billion years ago,4570000000,,,deep_time,Ignition,Fusion switches on in the core,formation,inferred,past,nasa-sun,,2026-10-27
+sun_03,sun,2,0.26,4.5 billion years ago,4500000000,,,deep_time,Young and violent,A fierce wind sweeps the disk clear,formation,modeled,past,nasa-sun,,2026-10-27
+sun_04,sun,3,0.39,4.1 billion years ago,4100000000,,,deep_time,Main sequence,The long main sequence begins,formation,inferred,past,nasa-sun,,2026-10-27
+sun_05,sun,4,0.52,1610,416,,,dated,Spots traced,Galileo sketches blemishes that move,observation,observed,past,nasa-sun,,2026-10-27
+sun_06,sun,5,0.64,1859,167,,,dated,Carrington flare,A storm lights the telegraph wires,observation,observed,past,nasa-solar-cycle,,2026-10-27
+sun_07,sun,6,0.74,1995,31,,,dated,SOHO,The Sun watched around the clock,mission,observed,past,soho,,2026-10-27
+sun_08,sun,7,0.87,2020,6,,,dated,Solar Orbiter,Close enough to see the poles,mission,observed,past,solar-orbiter,,2026-10-27
+sun_09,sun,8,1,Today,0,,,today,Solar maximum,"Sunspots, flares, and a restless corona",status,state,current,nasa-sun,,2026-10-27
+mercury_01,mercury,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,Condenses nearest the Sun,formation,inferred,past,nasa-mercury,,2026-10-27
+mercury_02,mercury,1,0.13,4.5 billion years ago,4500000000,,,deep_time,Iron world,"A giant core, a paper-thin crust",formation,modeled,past,nasa-mercury,,2026-10-27
+mercury_03,mercury,2,0.26,4.1 billion years ago,4100000000,,,deep_time,Erupting plains,Lava floods the basins,geological,inferred,past,nasa-mercury,,2026-10-27
+mercury_04,mercury,3,0.39,3.9 billion years ago,3900000000,,,deep_time,Caloris basin,"A 1,550-kilometre impact scar",impact,inferred,past,nasa-mercury,,2026-10-27
+mercury_05,mercury,4,0.52,3.5 billion years ago,3500000000,,,deep_time,The shrinking,The core cools and the crust buckles,geological,inferred,past,nasa-mercury,,2026-10-27
+mercury_06,mercury,5,0.64,1631,395,,,dated,The first transit,Gassendi watches it cross the Sun,observation,observed,past,nasa-mercury-transit,,2026-10-27
+mercury_07,mercury,6,0.74,1889,137,,,dated,Ink and maps,Schiaparelli charts the sun-baked face,observation,observed,past,nasa-mercury,,2026-10-27
+mercury_08,mercury,7,0.87,1974,52,,,dated,Mariner 10,The first close approach,mission,observed,past,mariner-10,,2026-10-27
+mercury_09,mercury,8,1,Today,0,,,today,BepiColombo,Orbit insertion is due in November 2026,mission,state,planned,bepi-colombo,,2026-10-27
+venus_01,venus,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,Born of the same restless dust,formation,inferred,past,nasa-venus,,2026-10-27
+venus_02,venus,1,0.13,4.5 billion years ago,4500000000,,,deep_time,Magma ocean,Molten rock for a hundred million years,formation,inferred,past,nasa-venus,,2026-10-27
+venus_03,venus,2,0.26,4 billion years ago,4000000000,3500000000,4200000000,deep_time,Temperate years,A young Venus may have held oceans,climate,modeled,past,venus-oceans,Model-dependent; early oceans are not directly observed.,2026-10-27
+venus_04,venus,3,0.39,3 billion years ago,3000000000,,,deep_time,The runaway,Oceans boil; the CO2 sky thickens,climate,modeled,past,nasa-venus,,2026-10-27
+venus_05,venus,4,0.52,700 million years ago,700000000,300000000,1000000000,deep_time,Resurfacing,Rivers of lava repave the whole planet,geological,inferred,past,nasa-venus,Surface-age estimates vary widely.,2026-10-27
+venus_06,venus,5,0.64,1610,416,,,dated,Galileo's phases,A disk that waxes like a little moon,observation,observed,past,nasa-venus,,2026-10-27
+venus_07,venus,6,0.74,1962,64,,,dated,Mariner 2,The first flyby of another planet,mission,observed,past,mariner-2,,2026-10-27
+venus_08,venus,7,0.87,1970,56,,,dated,Venera 7,The first landing on another world,mission,observed,past,venera-7,,2026-10-27
+venus_09,venus,8,1,Today,0,,,today,Cloud world,465°C beneath an unbroken ceiling,status,state,current,nasa-venus,,2026-10-27
+earth_01,earth,0,0,13.8 billion years ago,13800000000,,,deep_time,Big Bang,The universe begins,cosmic,inferred,past,nasa-earth,,2026-10-27
+earth_02,earth,1,0.075,4.6 billion years ago,4600000000,,,deep_time,Protoplanet,Dust and rock collide,formation,modeled,past,nasa-earth,,2026-10-27
+earth_03,earth,2,0.112,4.5 billion years ago,4500000000,4500000000,4550000000,deep_time,Magma ocean,The surface is molten,geological,modeled,past,nasa-earth,Accretion and magma-ocean timing are model-dependent.,2026-10-27
+earth_04,earth,3,0.152,4.4 billion years ago,4400000000,4300000000,4500000000,deep_time,First oceans,Steam falls as rain,geological,inferred,past,nasa-earth,Timing depends on accretion and cooling models.,2026-10-27
+earth_05,earth,4,0.285,3.7 billion years ago,3700000000,3500000000,3800000000,deep_time,First life,Microbes under a hazy sky,life,inferred,past,first-life,Older claims are disputed; 3.5 Ga is widely accepted.,2026-10-27
+earth_06,earth,5,0.56,650 million years ago,650000000,600000000,720000000,deep_time,Snowball Earth,Ice reaches the equator,climate,inferred,past,nasa-earth,The Cryogenian spans multiple glacial episodes.,2026-10-27
+earth_07,earth,6,0.662,250 million years ago,250000000,,,deep_time,Pangaea,One supercontinent,geological,inferred,past,nasa-earth,,2026-10-27
+earth_08,earth,7,0.79,66 million years ago,66000000,65900000,66100000,deep_time,Chicxulub,An asteroid ends the dinosaurs,impact,observed,past,chicxulub,Impact age is tightly constrained.,2026-10-27
+earth_09,earth,8,1,Today,0,,,today,Earth,8.2 billion people,status,state,current,un-wpp,,2026-10-27
+moon_01,moon,0,0,4.5 billion years ago,4500000000,,,deep_time,A giant impact,Theia strikes; a molten ring gathers,formation,modeled,past,nasa-moon,,2026-10-27
+moon_02,moon,1,0.13,4.4 billion years ago,4400000000,,,deep_time,Magma ocean,A ball of fire cools above Earth,formation,modeled,past,nasa-moon,,2026-10-27
+moon_03,moon,2,0.26,4.3 billion years ago,4300000000,,,deep_time,First crust,Anorthosite highlands solidify,geological,inferred,past,nasa-moon,,2026-10-27
+moon_04,moon,3,0.39,3.9 billion years ago,3900000000,3800000000,4100000000,deep_time,Bombardment,Basins carve a face we still know,impact,modeled,past,nasa-moon,Late Heavy Bombardment timing is debated.,2026-10-27
+moon_05,moon,4,0.52,3.2 billion years ago,3200000000,,,deep_time,Maria,Lava floods the near side,geological,inferred,past,nasa-moon,,2026-10-27
+moon_06,moon,5,0.64,1610,416,,,dated,Galileo's map,A face drawn in ink and shadow,observation,observed,past,nasa-moon,,2026-10-27
+moon_07,moon,6,0.74,1969,57,,,dated,Apollo 11,Six hundred million watch the first steps,mission,observed,past,apollo-11,,2026-10-27
+moon_08,moon,7,0.87,1972,54,,,dated,Last samples,Apollo 17 returns the final lunar samples,mission,observed,past,apollo-17,,2026-10-27
+moon_09,moon,8,1,Today,0,,,today,Artemis,A new generation heads back,mission,state,planned,artemis,,2026-10-27
+mars_01,mars,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,A companion world condenses,formation,inferred,past,nasa-mars,,2026-10-27
+mars_02,mars,1,0.13,4.1 billion years ago,4100000000,3900000000,4300000000,deep_time,Borealis impact,A planet-sized blow flattens the north,impact,hypothesis,past,nasa-mars,Impact hypothesis; timing is uncertain.,2026-10-27
+mars_03,mars,2,0.26,3.9 billion years ago,3900000000,,,deep_time,Hellas,One basin swallows whole provinces,impact,observed,past,nasa-mars,,2026-10-27
+mars_04,mars,3,0.39,3.7 billion years ago,3700000000,,,deep_time,Rivers and lakes,Deltas build at Jezero,climate,inferred,past,nasa-mars,,2026-10-27
+mars_05,mars,4,0.52,3 billion years ago,3000000000,,,deep_time,Tharsis rises,Volcano towers over volcano,geological,inferred,past,nasa-mars,,2026-10-27
+mars_06,mars,5,0.64,2 billion years ago,2000000000,,,deep_time,Drying,Ice locks away at the poles,climate,inferred,past,nasa-mars,,2026-10-27
+mars_07,mars,6,0.74,1877,149,,,dated,Imaginary canals,Schiaparelli's channels ignite fiction,observation,observed,past,nasa-mars,,2026-10-27
+mars_08,mars,7,0.87,1976,50,,,dated,Viking 1,The first working landing on Mars,mission,observed,past,viking-1,,2026-10-27
+mars_09,mars,8,1,Today,0,,,today,Perseverance,Hunting ancient life in Jezero,mission,state,current,perseverance,,2026-10-27
+jupiter_01,jupiter,0,0,4.6 billion years ago,4600000000,,,deep_time,The firstborn,The first core gathers the disk around it,formation,inferred,past,nasa-jupiter,,2026-10-27
+jupiter_02,jupiter,1,0.13,4.5 billion years ago,4500000000,4500000000,4560000000,deep_time,The Grand Tack,"Sweeps inward, then out, stirring the belt",formation,modeled,past,grand-tack,"Model scenario, not a direct observation.",2026-10-27
+jupiter_03,jupiter,2,0.26,4 billion years ago,4000000000,,,deep_time,Four moons,"Io, Europa, Ganymede, Callisto settle",formation,inferred,past,nasa-jupiter,,2026-10-27
+jupiter_04,jupiter,3,0.39,1610,416,,,dated,Galileo looks,Moons that move — a revolution in the sky,observation,observed,past,nasa-jupiter,,2026-10-27
+jupiter_05,jupiter,4,0.52,1665,361,,,dated,The Storm,Rival astronomers record a great red oval,observation,observed,past,nasa-jupiter,,2026-10-27
+jupiter_06,jupiter,5,0.64,1979,47,,,dated,Voyager,Io erupts; a faint ring encircles,mission,observed,past,voyager,,2026-10-27
+jupiter_07,jupiter,6,0.78,1994,32,,,dated,Comet crash,Shoemaker–Levy 9 slams into the cloud tops,impact,observed,past,voyager,,2026-10-27
+jupiter_08,jupiter,7,0.89,2016,10,,,dated,Juno,"Polar cyclones, deep winds, a fuzzy core",mission,observed,past,juno,,2026-10-27
+jupiter_09,jupiter,8,1,Today,0,,,today,Ocean missions,Europa Clipper and JUICE are en route,mission,state,ongoing,europa-clipper,,2026-10-27
+saturn_01,saturn,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,A second giant condenses in the quiet,formation,inferred,past,nasa-saturn,,2026-10-27
+saturn_02,saturn,1,0.13,4.4 billion years ago,4400000000,,,deep_time,Titan is born,A thick haze keeps a moon warm,formation,inferred,past,nasa-saturn,,2026-10-27
+saturn_03,saturn,2,0.26,100 million years ago,100000000,10000000,1000000000,deep_time,The rings,A shattered moon becomes rings of ice,formation,modeled,past,saturn-rings,Published ring-age estimates span two orders of magnitude.,2026-10-27
+saturn_04,saturn,3,0.39,1610,416,,,dated,Handles,Galileo sketches something on either side,observation,observed,past,nasa-saturn,,2026-10-27
+saturn_05,saturn,4,0.52,1655,371,,,dated,Titan and the ring,Titan is found; the ring shape follows in 1659,observation,observed,past,nasa-saturn,,2026-10-27
+saturn_06,saturn,5,0.64,1675,351,,,dated,The great gap,Cassini finds the dark division,observation,observed,past,nasa-saturn,,2026-10-27
+saturn_07,saturn,6,0.78,1980,46,,,dated,Voyager 1,Rings of gold rush past in the flyby,mission,observed,past,voyager,,2026-10-27
+saturn_08,saturn,7,0.89,2005,21,,,dated,Huygens lands,"Titan has rain, rivers and lakes",mission,observed,past,huygens,,2026-10-27
+saturn_09,saturn,8,1,Today,0,,,today,Ring rain,The rings are slowly being fed back,status,state,current,cassini,,2026-10-27
+uranus_01,uranus,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,An ice giant condenses in the dark,formation,inferred,past,nasa-uranus,,2026-10-27
+uranus_02,uranus,1,0.13,4.5 billion years ago,4500000000,4400000000,4600000000,deep_time,The knock,An Earth-sized body tips it on its side,impact,hypothesis,past,nasa-uranus,Giant-impact timing is not resolved.,2026-10-27
+uranus_03,uranus,2,0.26,4 billion years ago,4000000000,,,deep_time,A mantle of ice,"Water, methane, ammonia over a stone heart",formation,inferred,past,nasa-uranus,,2026-10-27
+uranus_04,uranus,3,0.39,2 billion years ago,2000000000,,,deep_time,Moons in line,Dark little moons circle the equator,formation,inferred,past,nasa-uranus,,2026-10-27
+uranus_05,uranus,4,0.52,1781,245,,,dated,"A comet, not a comet",Herschel discovers a planet,observation,observed,past,nasa-uranus,,2026-10-27
+uranus_06,uranus,5,0.64,1787,239,,,dated,Titania and Oberon,The first two moons are found,observation,observed,past,nasa-uranus,,2026-10-27
+uranus_07,uranus,6,0.78,1977,49,,,dated,Rings by accident,A distant star blinks through their arcs,observation,observed,past,voyager,,2026-10-27
+uranus_08,uranus,7,0.89,1986,40,,,dated,Voyager 2,The only visit ever paid,mission,observed,past,voyager,,2026-10-27
+uranus_09,uranus,8,1,Today,0,,,today,Waiting,No one has come back since,status,state,current,nasa-uranus,,2026-10-27
+neptune_01,neptune,0,0,4.6 billion years ago,4600000000,,,deep_time,Formation,Condenses in the deep cold,formation,inferred,past,nasa-neptune,,2026-10-27
+neptune_02,neptune,1,0.13,4.5 billion years ago,4500000000,,,deep_time,Out to the edge,Scattered outward as the giants migrate,formation,modeled,past,nasa-neptune,,2026-10-27
+neptune_03,neptune,2,0.26,4 billion years ago,4000000000,,,deep_time,"Triton, backwards",A Kuiper-belt world is captured,formation,modeled,past,nasa-neptune,,2026-10-27
+neptune_04,neptune,3,0.39,1612,414,,,dated,A misplaced star,Galileo logs it twice as fixed,observation,observed,past,nasa-neptune,,2026-10-27
+neptune_05,neptune,4,0.52,1846,180,,,dated,Found with mathematics,Le Verrier predicts it; Galle sees it,observation,observed,past,nasa-neptune,,2026-10-27
+neptune_06,neptune,5,0.64,1989,37,,,dated,Voyager 2,A Great Dark Spot; winds faster than sound,mission,observed,past,voyager,,2026-10-27
+neptune_07,neptune,6,0.78,1994,32,,,dated,The Spot is gone,Hubble returns to a spotless face,observation,observed,past,hubble,,2026-10-27
+neptune_08,neptune,7,0.89,2011,15,,,dated,One lap of the Sun,The first Neptunian year since discovery,observation,observed,past,nasa-neptune,,2026-10-27
+neptune_09,neptune,8,1,Today,0,,,today,Rings and storms,JWST draws the rings in infrared,status,state,current,jwst,,2026-10-27
