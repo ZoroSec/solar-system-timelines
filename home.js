@@ -39,16 +39,18 @@ const earthFragment = /* glsl */ `
     albedo = mix(albedo, vec3(0.9, 0.93, 0.95), cloud * 0.66);
 
     float ndl = dot(N, uLight);
-    float lit = smoothstep(-0.4, 0.98, ndl);
-    vec3 col = albedo * (0.2 + 0.96 * lit);
+    float lit = smoothstep(-0.36, 0.96, ndl);
+    vec3 col = albedo * (0.24 + 0.94 * lit);
     col += albedo * 0.04 * uHover;
 
+    // A very tight, weak glint. A broad highlight turned into a white
+    // blob at the lineup's thumbnail size.
     vec3 halfDir = normalize(uLight + V);
-    float spec = pow(max(dot(N, halfDir), 0.0), 52.0);
-    col += vec3(1.0, 0.95, 0.84) * spec * ocean * (1.0 - cloud) * 0.62;
+    float spec = pow(max(dot(N, halfDir), 0.0), 720.0);
+    col += vec3(1.0, 0.95, 0.84) * spec * ocean * (1.0 - cloud) * 0.12 * smoothstep(0.05, 0.55, ndl);
 
     float fres = pow(1.0 - clamp(dot(N, V), 0.0, 1.0), 2.7);
-    col += vec3(0.2, 0.45, 0.92) * fres * 0.54;
+    col += vec3(0.2, 0.45, 0.92) * fres * 0.46;
 
     gl_FragColor = vec4(max(col, vec3(0.0)), 1.0);
     #include <colorspace_fragment>
@@ -94,11 +96,11 @@ const AXES = {
   venus: { tilt: 0.046, spin: -0.014 },
   earth: { tilt: 0.409, spin: 0.085 },
   moon: { tilt: 0.117, spin: 0.034 },
-  mars: { tilt: 0.440, spin: 0.080 },
-  jupiter: { tilt: 0.055, spin: 0.230 },
-  saturn: { tilt: 0.466, spin: 0.195 },
-  uranus: { tilt: 1.706, spin: 0.140 },
-  neptune: { tilt: 0.494, spin: 0.150 },
+  mars: { tilt: 0.440, spin: 0.080, flatten: 0.006 },
+  jupiter: { tilt: 0.055, spin: 0.230, flatten: 0.065 },
+  saturn: { tilt: 0.466, spin: 0.195, flatten: 0.098 },
+  uranus: { tilt: 1.706, spin: 0.140, flatten: 0.023 },
+  neptune: { tilt: 0.494, spin: 0.150, flatten: 0.017 },
 };
 
 let activeKey = null;
@@ -110,7 +112,7 @@ let scene;
 const objects = new Map();
 
 const timeUniform = { value: 0 };
-const light = new THREE.Vector3(-0.68, 0.3, 0.66).normalize();
+const light = new THREE.Vector3(-0.52, 0.34, 0.80).normalize();
 const lightUniform = { value: light };
 
 /* ---------------------------------------------------------------------
@@ -121,8 +123,8 @@ const lightUniform = { value: light };
    Scene
 --------------------------------------------------------------------- */
 
-const sphereGeometry = new THREE.SphereGeometry(1, 64, 48);
-const ringGeometry = new THREE.RingGeometry(1.38, 2.36, 128, 1);
+const sphereGeometry = new THREE.SphereGeometry(1, 128, 96);
+const ringGeometry = new THREE.RingGeometry(1.38, 2.36, 160, 2);
 
 function color(value) {
   return new THREE.Color(value);
@@ -167,9 +169,9 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#716c64") },
-        uColorB: { value: color("#b2aa9e") },
-        uColorC: { value: color("#3e3a35") },
+        uColorA: { value: color("#7b766e") },
+        uColorB: { value: color("#c0b9ad") },
+        uColorC: { value: color("#46423c") },
         uSeed: { value: 4.2 },
         uCrater: { value: 1.0 },
         uCaps: { value: 0.12 },
@@ -203,13 +205,13 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#9e4226") },
-        uColorB: { value: color("#d97f4f") },
-        uColorC: { value: color("#451d14") },
+        uColorA: { value: color("#cf8757") },
+        uColorB: { value: color("#eab37d") },
+        uColorC: { value: color("#5d4638") },
         uSeed: { value: 8.7 },
-        uCrater: { value: 0.45 },
+        uCrater: { value: 0.18 },
         uCaps: { value: 1.0 },
-        uMaria: { value: 0.55 },
+        uMaria: { value: 0.30 },
         uMars: { value: 1.0 },
         uVolcano: { value: 0.9 },
         uCanyon: { value: 1.0 },
@@ -243,15 +245,15 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#7fcbd5") },
-        uColorB: { value: color("#a9e2e6") },
-        uColorC: { value: color("#d3f0f2") },
+        uColorA: { value: color("#8fc5cb") },
+        uColorB: { value: color("#b6dfe2") },
+        uColorC: { value: color("#d8edee") },
         uSeed: { value: 13.2 },
         uBands: { value: 2.6 },
         uStreak: { value: 0.12 },
-        uCalm: { value: 0.86 },
-        uBright: { value: 0.55 },
-        uHood: { value: 0.36 },
+        uCalm: { value: 0.80 },
+        uBright: { value: 0.40 },
+        uHood: { value: 0.40 },
         uStorm: { value: 0.0 },
       },
       vertexShader,
@@ -263,14 +265,14 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#203d88") },
-        uColorB: { value: color("#3f63bd") },
-        uColorC: { value: color("#9fb4f0") },
+        uColorA: { value: color("#143a80") },
+        uColorB: { value: color("#1d4795") },
+        uColorC: { value: color("#88a8e4") },
         uSeed: { value: 18.4 },
-        uBands: { value: 7.6 },
-        uStreak: { value: 0.55 },
-        uCalm: { value: 0.12 },
-        uBright: { value: 0.48 },
+        uBands: { value: 3.6 },
+        uStreak: { value: 0.08 },
+        uCalm: { value: 0.72 },
+        uBright: { value: 0.40 },
         uHood: { value: 0.12 },
         uStorm: { value: 0.9 },
       },
@@ -283,14 +285,14 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#e0d0b3") },
-        uColorB: { value: color("#a4643b") },
-        uColorC: { value: color("#5d3827") },
-        uColorD: { value: color("#7e8b92") },
+        uColorA: { value: color("#f4ecd9") },
+        uColorB: { value: color("#d7a97f") },
+        uColorC: { value: color("#9a6a4d") },
+        uColorD: { value: color("#98a2a6") },
         uSeed: { value: 7.1 },
-        uBands: { value: 15.0 },
+        uBands: { value: 8.0 },
         uSpot: { value: 1.0 },
-        uCool: { value: 0.16 },
+        uCool: { value: 0.13 },
       },
       vertexShader,
       fragmentShader: gasFragment,
@@ -301,14 +303,14 @@ function materialFor(key) {
     return new THREE.ShaderMaterial({
       uniforms: {
         ...common,
-        uColorA: { value: color("#dfcda3") },
-        uColorB: { value: color("#b9a274") },
-        uColorC: { value: color("#8e7a57") },
-        uColorD: { value: color("#8d8a7e") },
+        uColorA: { value: color("#f5edd8") },
+        uColorB: { value: color("#e9dbba") },
+        uColorC: { value: color("#d6c4a2") },
+        uColorD: { value: color("#c6bfae") },
         uSeed: { value: 3.3 },
-        uBands: { value: 17.0 },
+        uBands: { value: 13 },
         uSpot: { value: 0.0 },
-        uCool: { value: 0.05 },
+        uCool: { value: 0.08 },
       },
       vertexShader,
       fragmentShader: gasFragment,
@@ -381,11 +383,11 @@ try {
     venus: 2.1,
     earth: Math.PI * 0.5 + 0.18,
     moon: 0.55,
-    mars: 2.8,
+    mars: 1.5,
     jupiter: 0.26,
     saturn: 0.16,
     uranus: 1.4,
-    neptune: 2.9,
+    neptune: 0.35,
   };
 
   bodies.forEach((body) => {
@@ -399,13 +401,14 @@ try {
 
     const mesh = new THREE.Mesh(sphereGeometry, material);
     mesh.rotation.y = rotations[key] || 0;
+    mesh.scale.y = 1 - (axis.flatten || 0);
     tiltGroup.add(mesh);
 
     if (key === "saturn") {
       const ringMaterial = new THREE.ShaderMaterial({
         uniforms: {
-          uRingA: { value: color("#786b56") },
-          uRingB: { value: color("#c8bb9f") },
+          uRingA: { value: color("#6b5f4b") },
+          uRingB: { value: color("#dfd1b2") },
           uHover: material.uniforms.uHover,
           uAlpha: { value: 1 },
           uRingStyle: { value: 0 },

@@ -722,6 +722,7 @@ function buildPlanetScene() {
 
   const geometry = new THREE.SphereGeometry(1, 128, 96);
   const planet = new THREE.Mesh(geometry, planetMaterial);
+  planet.scale.y = 1 - (intro.base.flatten || 0);
 
   earthGroup = new THREE.Group();
   earthGroup.add(planet);
