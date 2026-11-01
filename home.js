@@ -7,6 +7,7 @@ import {
   gasFragment,
   ringFragment,
   ringVertexShader,
+  craterSeeds,
 } from "./planets.js";
 
 /* The homepage's textured Earth preview — only ever drawn here, so it
@@ -123,7 +124,7 @@ const lightUniform = { value: light };
    Scene
 --------------------------------------------------------------------- */
 
-const sphereGeometry = new THREE.SphereGeometry(1, 128, 96);
+const sphereGeometry = new THREE.SphereGeometry(1, 36, 24);
 const ringGeometry = new THREE.RingGeometry(1.38, 2.36, 160, 2);
 
 function color(value) {
@@ -178,6 +179,7 @@ function materialFor(key) {
         uMaria: { value: 0.3 },
         uBasin: { value: 0.78 },
         uScarp: { value: 1.0 },
+        uCraters: { value: craterSeeds(4.2) },
       },
       vertexShader,
       fragmentShader: rockFragment,
@@ -195,6 +197,7 @@ function materialFor(key) {
         uCrater: { value: 0.9 },
         uCaps: { value: 0.0 },
         uMaria: { value: 0.85 },
+        uCraters: { value: craterSeeds(21.5) },
       },
       vertexShader,
       fragmentShader: rockFragment,
@@ -215,6 +218,7 @@ function materialFor(key) {
         uMars: { value: 1.0 },
         uVolcano: { value: 0.9 },
         uCanyon: { value: 1.0 },
+        uCraters: { value: craterSeeds(8.7) },
       },
       vertexShader,
       fragmentShader: rockFragment,
@@ -318,11 +322,11 @@ function materialFor(key) {
   }
 
   // Earth
-  const dayTexture = loader.load("./assets/earth_atmos_2048.jpg", (texture) => {
+  const dayTexture = loader.load("./assets/earth_atmos_512.jpg", (texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
   });
-  const specTexture = loader.load("./assets/earth_specular_2048.jpg");
-  const cloudTexture = loader.load("./assets/earth_clouds_1024.png");
+  const specTexture = loader.load("./assets/earth_specular_256.jpg");
+  const cloudTexture = loader.load("./assets/earth_clouds_256.png");
 
   dayTexture.anisotropy = 8;
   specTexture.anisotropy = 8;
@@ -367,7 +371,7 @@ try {
   renderer = new THREE.WebGLRenderer({
     canvas,
     alpha: true,
-    antialias: true,
+    antialias: (window.devicePixelRatio || 1) < 1.5,
     powerPreference: "high-performance",
   });
   renderer.setClearColor(0x000000, 0);
@@ -476,7 +480,7 @@ function layout() {
   const height = line.clientHeight;
   if (!width || !height) return;
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.setSize(width, height, false);
 
   camera.left = 0;

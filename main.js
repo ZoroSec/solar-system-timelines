@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { sunFragment, rockFragment, airFragment, gasFragment, ringFragment, ringVertexShader } from "./planets.js";
+import { sunFragment, rockFragment, airFragment, gasFragment, ringFragment, ringVertexShader, craterSeeds } from "./planets.js";
 import { PLANETS, PLANET_ORDER } from "./planet-eras.js";
 import { EARTH_ERAS } from "./earth-eras.js";
 
@@ -246,7 +246,7 @@ function makeRenderer() {
   try {
     renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true,
+      antialias: (window.devicePixelRatio || 1) < 1.5,
       powerPreference: "high-performance",
     });
   } catch (error) {
@@ -254,7 +254,7 @@ function makeRenderer() {
   }
   if (!renderer.getContext()) return false;
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.setClearColor(0x000000, 0);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.domElement.setAttribute("aria-hidden", "true");
@@ -623,7 +623,7 @@ function createScene() {
     fragmentShader,
   });
 
-  const geometry = new THREE.SphereGeometry(1, 128, 96);
+  const geometry = new THREE.SphereGeometry(1, 96, 64);
   const earth = new THREE.Mesh(geometry, earthMaterial);
 
   cloudMaterial = new THREE.ShaderMaterial({
@@ -639,7 +639,7 @@ function createScene() {
     depthWrite: false,
   });
 
-  cloudMesh = new THREE.Mesh(new THREE.SphereGeometry(1.012, 96, 64), cloudMaterial);
+  cloudMesh = new THREE.Mesh(new THREE.SphereGeometry(1.012, 64, 48), cloudMaterial);
   cloudMesh.renderOrder = 2;
 
   earthGroup = new THREE.Group();
@@ -692,6 +692,7 @@ function buildPlanetScene() {
     uCanyon: { value: 0 },
     uVolcano: { value: 0 },
     uMars: { value: 0 },
+    uCraters: { value: craterSeeds(intro.base.seed) },
     uBands: { value: 0 },
     uStreak: { value: 0 },
     uStorm: { value: 0 },
