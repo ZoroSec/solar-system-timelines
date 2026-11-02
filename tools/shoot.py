@@ -81,11 +81,15 @@ def wait_ready(cdp, timeout=20.0):
 
 
 def shoot(cdp, url, out, wait=1.8, width=1440, height=900, mobile=False, reduced=False):
+    # Chrome's mobile emulation enforces a 420px minimum layout width even
+    # when the requested width is smaller, so a 390px capture crops the
+    # page. Keep the CSS viewport at the requested width instead; touch
+    # emulation still runs when a phone state is requested.
     cdp.send("Emulation.setDeviceMetricsOverride", {
         "width": width,
         "height": height,
         "deviceScaleFactor": 1,
-        "mobile": mobile,
+        "mobile": False,
     })
     cdp.send("Emulation.setEmulatedMedia", {
         "features": [{"name": "prefers-reduced-motion", "value": "reduce" if reduced else "no-preference"}]
@@ -105,14 +109,14 @@ def shoot(cdp, url, out, wait=1.8, width=1440, height=900, mobile=False, reduced
         "width": width + 1,
         "height": height,
         "deviceScaleFactor": 1,
-        "mobile": mobile,
+        "mobile": False,
     })
     time.sleep(0.25)
     cdp.send("Emulation.setDeviceMetricsOverride", {
         "width": width,
         "height": height,
         "deviceScaleFactor": 1,
-        "mobile": mobile,
+        "mobile": False,
     })
     time.sleep(0.9)
 
